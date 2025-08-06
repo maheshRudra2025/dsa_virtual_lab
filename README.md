@@ -1,4 +1,4 @@
-# dsa_virtual_lab
+# DSA Virtual Lab
 A full-stack web application designed to demystify Data Structures and Algorithms (DSA) through an interactive and engaging learning experience.
 
 About the Project
