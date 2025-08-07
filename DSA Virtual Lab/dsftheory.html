@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="mainpage.css">
+</head>
+<body>
+    <nav id="navbar">
+        <img class="navlogo" src="DsaVirtualLabFinalLogo.png" alt="sitelogo">
+                <a href="https://pvppcoe.ac.in/"  class="navlogo"><img src="collegelogo.png" alt="collegelogo"  class="navlogo"></a>
+    </nav>
+    <nav id="navelements">
+        <a class="navelements" href="mainpage.html" class="navelements">Introduction</a>
+        <a class="navelements" href="ListOfExperiments.html" class="navelements">List of Experiments</a>
+        <a href="feedback.html" class="navelements">Feedback</a>
+    </nav>
+    <div class="header">
+        <a href="dsftheory.html" class="headerelements1">Theory</a>
+        <a href="dsfcode.html" class="headerelements2">Code</a>
+        <a href="dfsvisual.html" class="headerelements3">Visualisation</a>
+    </div>
+    <h3 class="heading1">Depth First Search (DFS)</h3>
+    <p class="para">
+        Two states of vertex: <b>initial</b> and <b>visited</b> <br>
+        Initially all vertices are at initial state, when vertex will be popped from stack its state will
+        change to visited. <br>
+</p>
+<p class="para">•<b>Procedure:</b>
+    <p class="para">
+        Initially stack is empty, and all vertices are in initial state:<br>
+        &nbsp; &nbsp;  1. Push starting vertex on the stack  <br>
+        &nbsp; &nbsp;   2. Pop a vertex from stack <br>
+        &nbsp; &nbsp; 3. If popped vertex is in initial state, visit it and change its state to visited . Push all
+        unvisited vertices adjacent to the popped vertex. <br>
+        &nbsp; &nbsp;   4. Repeat steps 2 &3 until stack is empty. <br>
+        There is no restriction on the order in which the successors of a vertex are visited and so we
+can push the successor of a vertex in any order. <br>
+<img src="dfsimg1.png" alt="dfsimg" class="dfsimg"> <br>
+    </p>
+   
+
+</body>
+</html>

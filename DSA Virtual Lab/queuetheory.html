@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="mainpage.css">
+</head>
+<body>
+    <nav id="navbar">
+        <img class="navlogo" src="DsaVirtualLabFinalLogo.png" alt="sitelogo">
+        <a href="https://pvppcoe.ac.in/"  class="navlogo"><img src="collegelogo.png" alt="collegelogo"  class="navlogo"></a>
+    </nav>
+    <nav id="navelements">
+        <a class="navelements" href="mainpage.html" class="navelements">Introduction</a>
+        <a class="navelements" href="ListOfExperiments.html" class="navelements">List of Experiments</a>
+        <a href="feedback.html" class="navelements">Feedback</a>
+    </nav>
+    <div class="header">
+        <a href="queuetheory.html" class="headerelements1">Theory</a>
+        <a href="queuecode.html" class="headerelements2">Code</a>
+        <a href="queuevisual.html" class="headerelements3">Visualisation</a>
+    </div>
+    <h3 class="heading1">Queue</h3>
+    <p class="para">
+        A queue is a linear data structure that follows the <b>First In, First Out (FIFO) </b>principle, which 
+        means that the element which is inserted first in the queue will be the first one to be removed 
+        from the queue. A good example of a queue is a queue of customers purchasing a train ticket, 
+        where the customer who comes first will be served first. <br>
+        A linked queue consists of two pointers, i.e., the  <b> front pointer</b> and the <b>rear pointer</b>. The front 
+pointer stores the address of the first element of the queue, and the rear pointer stores the address 
+of the last element of the queue.
+Insertion is performed at the rear end, whereas deletion is performed at the front end of the queue. 
+If front and rear both points to NULL, it signifies that the queue is empty. <br>
+</p>
+<h2>The two main operations performed on the linked queue are:</h2>
+<p class="para">•<b>Insertion</b>
+    <p class="para">
+        Insertion
+        Insert operation or insertion on a linked queue adds an element to the end of the queue. The new 
+        element which is added becomes the last element of the queue. <br>
+    </p>
+    <p class="para">• <b>Deletion</b> <br>
+        Deletion
+        Deletion or delete operation on a linked queue removes the element which was first inserted in 
+        the queue, i.e., always the first element of the queue is removed. <br></p>
+    <p class="para">• <b> Display</b> <br>
+        Print function is used to display the content of the queue. Since we need to iterate over each 
+        element of the queue to print it, the time complexity of the print function is O(n), where n = 
+        number of nodes in a queue. <br>
+         &nbsp; &nbsp;  • Check if queue contains at least one element or not.  <br>
+         &nbsp; &nbsp;   • If the queue is empty print “No elements in the queue.” <br>
+         &nbsp; &nbsp;   • Else, define a node pointer and initialize it with the front. <br>
+         &nbsp; &nbsp;   • Display data of node pointer until the next node pointer becomes NULL. <br>
+    </p>
+</p>
+        <img src="queueimg.png" alt="stack image" class="queueimg">
+    </p>
+    <h3 class="heading1">Algorithm for Implementing a Queue using Linked List</h3>
+    <h1>1. Insertion Operation:</h1>
+
+    <p class="para"> <b>Step 1:</b>  Create a new node pointer: ptr = (struct node *) malloc (sizeof(struct node))</p>
+    <p class="para"><b>Step 2:</b> Now, two conditions arise, i.e., either the queue is empty, or the queue contains at least one 
+        element. </p>
+    <p class="para"><b>Step 3:</b>  If the queue is empty, then the new node added will be both front and rear, and the next 
+        pointer of front and rear will point to NULL. </p>
+    <p class="para"><b>Step 4:</b> If the queue contains at least one element, then the condition front == NULL becomes false. 
+        So, make the next pointer of rear point to new node ptr and point the rear pointer to the 
+        newly created node ptr
+       Hence, a new node(element) is added to the queue</p>
+
+<h1>2. Deletion Operation:</h1>
+    <p class="para"><b>Step 1:</b> Check if the queue is empty or not </p>
+    <p class="para"><b>Step 2:</b>  If the queue is empty, i.e., front==NULL, so we just print 'underflow' on the screen and 
+        exit.</p>
+    <p class="para"><b>Step 3:</b>  If the queue is not empty, delete the element at which the front pointer is pointing. For deleting 
+        a node, copy the node which is pointed by the front pointer into the pointer ptr and make the 
+        front pointer point to the front's next node and free the node pointed by the node ptr. This can 
+        be done using the following statement:
+       *ptr = front; 
+        front = front -> next; 
+        free(ptr)</p>
+</body>
+</html>

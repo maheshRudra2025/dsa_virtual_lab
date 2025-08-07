@@ -1,0 +1,141 @@
+body {
+        font: 100% Verdana, Arial, Helvetica, sans-serif;
+        margin: 0px;
+        padding: 0px;
+        text-align: center;
+        color: rgb(0, 0, 0);
+        min-height: 100% !important;
+    }
+    
+    .VisualizationMainPage #mainContent {
+        background: rgb(255, 255, 255);
+    }
+    
+    .VisualizationMainPage #container {
+        background: rgb(255, 255, 255);
+        text-align: left;
+    }
+    
+    .VisualizationMainPage #algoControlSection {
+        background: rgb(155, 168, 245);
+        color: rgb(0, 0, 0);
+        border-radius: 0.8rem;
+    }
+    
+    .VisualizationMainPage #generalAnimationControlSection {
+        background: rgb(136, 148, 219);
+        color: rgb(0, 0, 0);
+        border-radius: 0.8rem;
+    }
+    
+    .VisualizationMainPage #header {
+        /* background: rgb(0, 102, 51); */
+        color: rgb(255, 204, 51);
+        padding: 0px 10px 0px 20px;
+    }
+    
+    .VisualizationMainPage #header a:visited {
+        text-decoration: none;
+        color: rgb(255, 204, 51);
+    }
+    
+    .VisualizationMainPage #header h1 {
+        margin: 0px;
+        padding: 10px 0px;
+    }
+    
+    .VisualizationMainPage #header a:link {
+        text-decoration: none;
+        color: rgb(255, 204, 51);
+    }
+    
+    .VisualizationMainPage #container {
+        background: rgb(255, 255, 255);
+        margin: 0px auto;
+        text-align: left;
+    }
+    
+    .VisualizationMainPage #footer a:visited {
+        text-decoration: none;
+    }
+    
+    .VisualizationMainPage #footer a:link {
+        text-decoration: none;
+        color: rgb(255, 204, 51);
+    }
+    
+    .VisualizationMainPage #mainContent h1 {
+        padding: 0px 20px;
+        background: rgb(255, 255, 255);
+        color: rgb(0, 102, 51);
+    }
+    
+    .VisualizationMainPage #mainContent h2 {
+        padding: 0px 20px;
+        background: rgb(255, 255, 255);
+        color: rgb(0, 102, 51);
+    }
+    
+    .VisualizationMainPage #mainContent h3 {
+        padding: 0px 20px;
+        background: rgb(255, 255, 255);
+        color: rgb(0, 102, 51);
+    }
+    
+    .VisualizationMainPage #footer {
+        padding: 0px 10px;
+        color: rgb(44, 41, 31);
+    }
+    
+    .VisualizationMainPage #footer p {
+        margin: 0px;
+        padding: 10px 0px;
+    }
+    
+    em {
+    }
+    
+    #AlgorithmSpecificControls {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 5px 0px;
+    }
+    
+    #AlgorithmSpecificControls > td {
+        margin-right: 25px;
+        margin-left: 10px;
+    }
+    
+    #AlgorithmSpecificControls > td:nth-child(2n) {
+        margin-right: 55px;
+    }
+    
+    input[type="button"] {
+        height: 2rem;
+        border-radius: 0.5rem;
+        border: none;
+        padding: 0px 0.5rem;
+        color: rgb(245, 0, 87);
+        background: white;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 5px;
+        transition: all 0.5s ease 0s;
+        cursor: pointer;
+        font-size: 1.5vw;
+    
+    input[type="button"]:active {
+        transform: scale(0.9);
+    }
+    
+    #GeneralAnimationControls {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        align-items: center;
+    }
+    
+    canvas {
+        max-width: 100% !important;
+    }
+    

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="mainpage.css">
+</head>
+<body>
+    <nav id="navbar">
+        <img class="navlogo" src="DsaVirtualLabFinalLogo.png" alt="sitelogo">
+        <a href="https://pvppcoe.ac.in/"  class="navlogo"><img src="collegelogo.png" alt="collegelogo"  class="navlogo"></a>
+    </nav>
+    <nav id="navelements">
+        <a class="navelements" href="mainpage.html" class="navelements">Introduction</a>
+        <a class="navelements" href="ListOfExperiments.html" class="navelements">List of Experiments</a>
+        <a href="feedback.html" class="navelements">Feedback</a>
+    </nav>
+    <div class="header">
+        <a href="stacktheory.html" class="headerelements1">Theory</a>
+        <a href="stackcode.html" class="headerelements2">Code</a>
+        <a href="stackvisual.html" class="headerelements3">Visualisation</a>
+    </div>
+    <h3 class="heading1">Stack</h3>
+    <p class="para">
+        A stack is an abstract data type that follows the <b>
+            Last-In-First-Out (LIFO) </b>. It is a 
+        collection of elements with two primary operations: <b>"push"</b> and <b>"pop"</b>.The "push" 
+operation adds an element to the top of the stack, while the "pop" operation removes and 
+returns the topmost element from the stack.
+The stack can be visualized as a vertical structure, much like a stack of books. The element 
+added last (most recently) is positioned at the top, and the element added first (earlier) is 
+at the bottom. As new elements are added, they stack up on top, and when elements are 
+removed, they are taken from the top. <br>
+<p class="para">
+    <h5 class="heading1">Basic operations are performed in the stack are:</h5>
+    <p class="para"><b>1. Push:</b> It adds an item in the stack. If the stack is full, then the stack is said to be in 
+        Overflow condition.</p>
+        <p class="para"><b>2. Pop:</b> It deletes an item from the stack. The items are popped out in the reverse order in 
+            which they were pushed in. If the stack is empty, then it is said to be in Underflow 
+            condition i.e no more items can be deleted.</p>
+            <p class="para"><b>3. Peek or Top:</b> It returns the top element of the stack.</p>
+            <p class="para"><b>4. isEmpty:</b> It returns true if stack is empty, otherwise false.</p>
+        </p>
+        
+
+        <h3 class="heading1">Linked Lists</h3>
+        <p class="para">
+            A linked list is a linear data structure, but unlike arrays the elements are not stored at 
+            contiguous memory locations, the elements in a linked list are linked to each other using 
+            pointers. It consists of nodes where, each node contains a data field and a link to the next 
+            node.
+            A stack can be represented using different data structures, but the most common choices 
+            are an array or a linked list.
+            Linked list-based representation: In this representation, a linked list is used to implement 
+            the stack. Each node in the linked list represents an element of the stack and contains the 
+            actual data and a reference to the next node. The top of the stack is represented by the 
+            head of the linked list.
+            The linked list-based representation allows for dynamic resizing and does not have a fixed 
+            maximum size. It can grow or shrink as needed. However, accessing elements in a linked 
+            list requires following the references from the head to the desired node, which takes O(n) 
+            time in the worst case <br>
+        </p>
+        <img src="stackimg.png" alt="stack image" class="stackimage">
+    </p>
+    <h3 class="heading1">Algorithm for Implementing a Stack using Linked List</h3>
+    <h1>1. PUSH() Operation:</h3>
+
+    <p class="para"> <b>Step 1:</b> Start</p>
+    <p class="para"><b>Step 2:</b> Create a node new and declare variable top </p>
+    <p class="para"><b>Step 3:</b> Set new data part to be Null
+     // The first node is created, having null value and top pointing to it </p>
+    <p class="para"><b>Step 4:</b> Read the node to be inserted.</p>
+    <p class="para"><b>Step 5:</b> Check if the node is Null, then print "Insufficient Memory"</p>
+     <p class="para"> <b> Step 6:</b> If node is not Null, assign the item to data part of new and assign top to link part of new 
+     and also point stack head to new.</p>
+
+<h1>2. POP() Operation:</h3>
+    <p class="para"><b>Step 1:</b> Start</p>
+    <p class="para"><b>Step 2:</b> Check if the top is Null, then print "Stack Underflow."</p>
+    <p class="para"><b>Step 3:</b> If top is not Null, assign the top's link part to ptr and assign ptr to stack_head's link part.</p>
+    <p class="para"><b>Step 4:</b> Stop</p>
+ 
+<h1>3. PEEK() Operation:</h3>
+    <p class="para"><b>Step 1:</b> Start</p>
+    <p class="para"><b>Step 2:</b> Print or store the node pointed by top variable</p>
+    <p class="para"><b>Step 3:</b> Stop</p>
+
+    <h2>Note:</h2>
+    <p class="para">
+        In the above Algorithium <br>
+    1. We first create a node with value Null. <br>
+    2. Then when we have to push an element new we check if new is not null otherwise 
+    insertion cannot be done. We then feed Item into data part of new and assign top to its 
+    link and top is updated to the new value. And thus, an element is inserted. <br>
+    3. For popping we check first if the item is not null, otherwise stack is empty i.e underflow 
+    condition. The pointer is then made to point the next element and st_head link is assigned 
+    to the pointer's value. This eliminates the element from the link list. Thus, popping the 
+    element <br>
+    4. Peek value is stored or printed by returning node at which top is pointing <br>
+    5. Stop <br>
+    </p>
+ 
+</body>
+</html>

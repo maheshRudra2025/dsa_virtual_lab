@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="mainpage.css">
+</head>
+<body>
+    <nav id="navbar">
+        <img class="navlogo" src="DsaVirtualLabFinalLogo.png" alt="sitelogo">
+        <a href="https://pvppcoe.ac.in/"  class="navlogo"><img src="collegelogo.png" alt="collegelogo"  class="navlogo"></a>
+    </nav>
+    <nav id="navelements">
+        <a class="navelements" href="mainpage.html" class="navelements">Introduction</a>
+        <a class="navelements" href="ListOfExperiments.html" class="navelements">List of Experiments</a>
+        <a href="feedback.html" class="navelements">Feedback</a>
+    </nav>
+    <div class="header">
+        <a href="bsftheory.html" class="headerelements1">Theory</a>
+        <a href="bsfcode.html" class="headerelements2">Code</a>
+        <a href="bsfvisual.html" class="headerelements3">Visualisation</a>
+    </div>
+    <h3 class="heading1">Breadth First Search (BFS)</h3>
+    <p class="para">
+        In this technique ,first visit the starting vertex and then visit all the vertices adjacent to the
+        Starting vertex. After this we pick these adjacent vertices one by one and visit their
+        adjacent vertices and this process goes on . <br>
+        <img src="bfsimg1.png" alt="bfsimg" class="bfsimg"> <br>
+        During the algorithm, any vertex will be in one of the tree states-Initial, waiting, visited . At
+the start of the algorithm all vertices will be in initial state, when a vertex will be inserted in
+the queue its state will change from initial to waiting. When a vertex will be delected from
+queue and visited, its state will change from waiting to visited. <br>
+Initially queue is empty: <br>
+&nbsp; &nbsp;  1. Insert the starting vertex into the queue, change its state to waiting.  <br>
+&nbsp; &nbsp;   2. Delete front element from the queue and visit it, change its state to visited. <br>
+&nbsp; &nbsp;   3. Look for the adjacent vertices of the deleted element, and from these insert only
+those vertices into the queue which are in the initial state. Change the state of all
+these inserted vertices from initial to waiting. <br>
+&nbsp; &nbsp;   4. Repeat step 2,3 until the queue is empty. <br>
+
+</p>
+</body>
+</html>

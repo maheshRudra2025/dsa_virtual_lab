@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="mainpage.css">
+</head>
+<body>
+    <nav id="navbar">
+        <img class="navlogo" src="DsaVirtualLabFinalLogo.png" alt="sitelogo">
+                <a href="https://pvppcoe.ac.in/"  class="navlogo"><img src="collegelogo.png" alt="collegelogo"  class="navlogo"></a>
+    </nav>
+    <nav id="navelements">
+        <a class="navelements" href="mainpage.html" class="navelements">Introduction</a>
+        <a class="navelements" href="ListOfExperiments.html" class="navelements">List of Experiments</a>
+        <a href="feedback.html" class="navelements">Feedback</a>
+    </nav>
+    <div class="header">
+        <a href="bsttheory.html" class="headerelements1">Theory</a>
+        <a href="bstcode.html" class="headerelements2">Code</a>
+        <a href="bstvisual.html" class="headerelements3">Visualisation</a>
+    </div>
+    <h3 class="heading1">Binary Search Tree (BST)</h3>
+    <p class="para">
+        In a binary search tree, all the nodes in the left sub-tree have a value less than that of the root
+        node. Correspondingly, all the nodes in the right sub-tree have a value either equal to or greater
+        than the root node. The same rule is applicable to every sub-tree in the tree. (Note that a binary
+        search tree may or may not contain duplicate values, depending on its implementation.) <br>
+        <img src="bstimg1.png" alt="bst image" class="bstimg"><br>
+        To summarize, a binary search tree is a binary tree with the following properties: <br>
+        • The left sub-tree of a node N contains values that are less than N’s value. <br>
+        • The right sub-tree of a node N contains values that are greater than N’s value. <br>
+        • Both the left and the right binary trees also satisfy these properties and, thus, are binary
+        search trees. <br>
+</p>
+<h2 class="heading1">Operations  on Binary Search Tree:</h2>
+<p class="para">•<b>Searching for a Node in a Binary Search Tree</b>
+    <p class="para">
+        • The search function is used to find whether a given value is present in the tree or not.
+        The searching process begins at the root node. The function first checks if the binary
+        search tree is empty. If it is empty, then the value we are searching for is not present
+        in the tree. So, the search algorithm terminates by displaying an appropriate message. <br>
+        • However, if there are nodes in the tree, then the search function checks to see if the
+key value of the current node is equal to the value to be searched. If not, it checks if
+the value to be searched for is less than the value of the current node, in which case it
+should be recursively called on the left child node. In case the value is greater than
+the value of the current node, it should be recursively called on the right child node. <br>
+        <img src="bstimg2.png" alt="bst image" class="bstimg">
+    </p>
+    <p class="para">• <b>Inserting a New Node in a Binary Search Tree</b> <br>
+        The insert function is used to add a new node with a given value at the correct position in the
+        binary search tree. Adding the node at the correct position means that the new node should
+        not violate the properties of the binary search tree. The initial code for the insert function is
+        similar to the search function. This is because we first find the correct position where the
+        insertion has to be done and then add the node at that position. The insertion function
+        changes the structure of the tree. Therefore, when the insert function is called recursively, the
+        function should return the new tree pointer. <br>
+        • In Step 1 of the algorithm, the insert function checks if the current node of TREE is
+NULL. If it is NULL, the algorithm simply adds the node, else it looks at the current
+node’s value and then recurs down the left or right sub-tree. <br>
+• If the current node’s value is less than that of the new node, then the right sub-tree is
+traversed, else the left sub-tree is traversed. The insert function continues moving
+down the levels of a binary tree until it reaches a leaf node. The new node is added by
+following the rules of the binary search trees. That is, if the new node’s value is
+greater than that of the parent node, the new node is inserted in the right sub-tree, else
+it is inserted in the left sub-tree. <br>
+• The insert function requires time proportional to the height of the tree in the worst
+case. It takes O(log n) time to execute in the average case and O(n) time in the worst
+case. <br>
+<img src="bstimg3.png" alt="bst image" class="bstimg"> <br>
+    </p>
+    <p class="para">• <b> Deleting a Node from a Binary Search Tree</b> <br>
+        The delete function deletes a node from the binary search tree. However, utmost care should
+be taken that the properties of the binary search tree are not violated and nodes are not lost in
+the process. We will take up three cases in this section and discuss how a node is deleted
+from a binary search tree.<br>
+         &nbsp; &nbsp;  •Case 1: Deleting a Node that has No Children <br>
+          <img src="bstimg4.png" alt="bst image" class="bstimg"> <br>
+         &nbsp; &nbsp;   • Case 2: Deleting a Node with One Child <br>
+          <img src="bstimg5.png" alt="bst image" class="bstimg"> <br>
+         &nbsp; &nbsp;   • Case 3: Deleting a Node with Two Children<br>
+         <img src="bstimg6.png" alt="bst image" class="bstimg"> <br>   
+    </p>
+    <p class="para">• <b> Traversing a Binary Tree.</b> <br>
+        Traversing a binary tree is the process of visiting each node in the tree exactly once in a
+systematic way. Unlike linear data structures in which the elements are traversed
+sequentially, tree is a nonlinear data structure in which the elements can be traversed in many
+different ways. There are different algorithms for tree traversals. These algorithms differ in
+the order in which the nodes are visited.<br>
+<img src="bstimg7.png" alt="bst image" height="" width=""> <br>
+         &nbsp; &nbsp; <b> a. Pre-order Traversal</b><br>
+         &nbsp; &nbsp; <p class="para">To traverse a non-empty binary tree in pre-order, the following operations are
+            performed recursively at each node. <br>
+            The algorithm works by: <br>
+            1. Visiting the root node. <br>
+            2. Traversing the left sub-tree. <br>
+            3. Traversing the right sub-tree. <br>
+            In the above figure, the pre-order traversal of the tree is given as A, B, C. Root node
+            first, the left sub-tree next, and then the right sub-tree. Pre-order traversal is also
+            called as depth-first traversal. In this algorithm, the left sub-tree is always traversed
+            before the right sub-tree. The word ‘pre’ in the pre-order specifies that the root node
+            is accessed prior to any other nodes in the left and right sub-trees. Pre-order algorithm
+            is also known as the NLR traversal algorithm (Node-Left-Right).
+        </p>
+        &nbsp; &nbsp; <b> b. In-order Traversal</b> <br>
+        &nbsp; &nbsp; <p class="para">Here, all the elements with a value lower than a given value are accessed before the
+            elements with a higher value. To traverse a non-empty binary tree in in-order, the
+            following operations are performed recursively at each node. <br>
+            The algorithm works by: <br>
+            1. Traversing the left sub-tree. <br>
+            2. Visiting the root node. <br>
+            3. Traversing the right sub-tree. <br>
+            In the above figure, the in-order traversal of the tree is given as B, A, and C. Left sub-
+            tree first, the root node next, and then the right sub-tree. In-order traversal is also
+            
+            called as symmetric traversal. In this algorithm, the left sub-tree is always traversed
+            before the root node and the right sub-tree. The word ‘in’ in the in-order specifies that
+            the root node is accessed in between the left and the right sub-trees. In-order
+            algorithm is also known as the LNR traversal algorithm (Left-Node-Right).
+       </p>
+       &nbsp; &nbsp; <b> c. Post-order Traversal</b><br>
+       &nbsp; &nbsp; <p class="para">Post-order traversals are used to extract postfix notation from an expression tree. To
+        traverse a non-empty binary tree in post-order, the following operations are
+        performed recursively at each node. <br>
+          The algorithm works by: <br>
+          1. Traversing the left sub-tree. <br>
+          2. Traversing the right sub-tree. <br>
+          3. Visiting the root node. <br>
+In the above figure, the post-order traversal of the tree is given as B, C, and A. Left
+sub-tree first, the right sub-tree next, and finally the root node. In this algorithm, the
+left sub-tree is always traversed before the right sub-tree and the root node. The word
+‘post’ in the post-order specifies that the root node is accessed after the left and the
+right sub-trees. Post-order algorithm is also known as the LRN traversal algorithm
+(Left-Right-Node).
+      </p>
+</p>
+    </p>
+    
+
+</body>
+</html>

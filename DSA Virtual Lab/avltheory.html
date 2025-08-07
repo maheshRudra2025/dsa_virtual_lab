@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="mainpage.css">
+</head>
+<body>
+    <nav id="navbar">
+        <img class="navlogo" src="DsaVirtualLabFinalLogo.png" alt="sitelogo">
+                <a href="https://pvppcoe.ac.in/"  class="navlogo"><img src="collegelogo.png" alt="collegelogo"  class="navlogo"></a>
+    </nav>
+    <nav id="navelements">
+        <a class="navelements" href="mainpage.html" class="navelements">Introduction</a>
+        <a class="navelements" href="ListOfExperiments.html" class="navelements">List of Experiments</a>
+        <a href="feedback.html" class="navelements">Feedback</a>
+    </nav>
+    <div class="header">
+        <a href="avltheory.html" class="headerelements1">Theory</a>
+        <a href="avlcode.html" class="headerelements2">Code</a>
+        <a href="avlvisual.html" class="headerelements3">Visualisation</a>
+    </div>
+    <h3 class="heading1">AVL Tree</h3>
+    <p class="para">
+        AVL tree is a self-balancing binary search tree invented by G.M. Adelson-Velsky and E.M. Landis 
+        in 1962. The tree is named AVL in honour of its inventors. In an AVL tree, the heights of the two 
+        sub-trees of a node may differ by at most one. Due to this property, the AVL tree is also known as 
+        a height-balanced tree. The key advantage of using an AVL tree is that it takes O(log n) time to 
+        perform search, insert, and delete operations in an average case as well as the worst case because 
+        the height of the tree is limited to O(log n).  <br>
+        The structure of an AVL tree is the same as that of a binary search tree but with a little difference. 
+        In its structure, it stores an additional variable called the BalanceFactor. Thus, every node has a 
+        balance factor associated with it. The balance factor of a node is calculated by subtracting the 
+        height of its right sub-tree from the height of its left sub-tree. A binary search tree in which every 
+        node has a balance factor of –1, 0, or 1 is said to be height balanced. A node with any other balance 
+        factor is considered to be unbalanced and requires rebalancing of the tree.  <br>
+        &nbsp; &nbsp;  •  If the balance factor of a node is 1, then it means that the left sub-tree of the tree is one 
+        level higher than that of the right sub-tree. Such a tree is therefore called as a left-heavy 
+        tree <br>
+        &nbsp; &nbsp;   • If the balance factor of a node is 0, then it means that the height of the left sub-tree 
+        (longest path in the left sub-tree) is equal to the height of the right sub-tree. <br>
+        &nbsp; &nbsp;   • If the balance factor of a node is –1, then it means that the left sub-tree of the tree is one 
+        level lower than that of the right sub-tree. Such a tree is therefore called as a right-heavy 
+        tree. <br>
+</p>
+<h2> Operations on AVL Tree:</h2>
+<p class="para">•<b>Searching for a Node in an AVL Tree</b>
+    <p class="para">
+        Searching in an AVL tree is performed exactly the same way as it is performed in a binary search 
+        tree. Due to the height-balancing of the tree, the search operation takes O(log n) time to complete. 
+        Since the operation does not modify the structure of the tree, no special provisions are required . <br>
+    </p>
+    <p class="para">• <b>  Inserting a New Node in an AVL Tree</b> <br>
+        Insertion in an AVL tree is also done in the same way as it is done in a binary search tree. In 
+        the AVL tree, the new node is always inserted as the leaf node. But the step of insertion is usually 
+        followed by an additional step of rotation. Rotation is done to restore the balance of the tree. 
+        However, if insertion of the new node does not disturb the balance factor, that is, if the balance 
+        factor of every node is still –1, 0, or 1, then rotations are not required. During insertion, the new 
+        node is inserted as the leaf node, so it will always have a balance factor equal to zero. The only 
+        nodes whose balance factors will change are those which lie in the path between the root of the 
+        tree and the newly inserted node. The possible changes which may take place in any node on the 
+        path are as follows: <br>
+         &nbsp; &nbsp;  •  Initially, the node was either left- or right-heavy and after insertion, it becomes balanced <br>
+         &nbsp; &nbsp;   • Initially, the node was balanced and after insertion, it becomes either left- or right-heavy. <br>
+         &nbsp; &nbsp;   • Else, define a node pointer and initialize it with the front. <br>
+         &nbsp; &nbsp;   • Initially, the node was heavy (either left or right) and the new node has been inserted in the 
+         heavy sub-tree, thereby creating an unbalanced sub-tree. Such a node is said to be a critical
+         node. <br>
+         Consider the AVL tree given in Fig. 10.36. If we insert a new node with the value 30, then the 
+new tree will still be balanced and no rotations will be required in this case. Look at the tree 
+given in Fig. 10.37 which shows the tree after inserting node 30. <br>
+<img src="avlimg1.png" alt="avl tree image" class="avlimg"> <br>
+Let us take another example to see how insertion can disturb the balance factors of the nodes 
+and how rotations are done to restore the AVL property of a tree. Look at the tree given in Fig <br>
+<img src="avlimg2.png" alt="avl tree image"class="avlimg"> <br>
+After inserting a new node with the value 71, the new tree will be as shown in Fig. 10.39. Note 
+that there are three nodes in the tree that have their balance factors 2, –2, and –2, thereby 
+disturbing the AVLness of the tree. So, here comes the need to perform rotation. To perform 
+rotation, our first task is to find the critical node. Critical node is the nearest ancestor node on 
+the path from the inserted node to the root whose balance factor is neither –1, 0, nor 1. In the 
+tree given above, the critical node is 72. The second task in rebalancing the tree is to determine 
+which type of rotation has to be done. There are four types of rebalancing rotations and 
+application of these rotations depends on the position of the inserted node with reference to the 
+critical node. The four categories of rotations are: <br>
+&nbsp; &nbsp;  •  LL rotation The new node is inserted in the left sub-tree of the left sub-tree of the 
+critical node. <br>
+&nbsp; &nbsp;   • RR rotation The new node is inserted in the right sub-tree of the right sub-tree of the 
+critical node. <br>
+&nbsp; &nbsp;   • LR rotation The new node is inserted in the right sub-tree of the left sub-tree of the 
+critical node <br>
+&nbsp; &nbsp;   • RL rotation The new node is inserted in the left sub-tree of the right sub-tree of the 
+critical node. <br>
+<img src="avlimg3.png" alt="avl tree image" class="avlimg"> <br>
+<b> LL Rotation:</b> Let us study each of these rotations in detail. First, we will see where and 
+how LL rotation is applied. Consider the tree given in which shows an AVL 
+tree. Tree <br>
+&nbsp; &nbsp;  (a) is an AVL tree. In tree <br>
+&nbsp; &nbsp;   (b), a new node is inserted in the left sub-tree of the 
+left sub-tree of the critical node A (node A is the critical node because it is the closest 
+ancestor whose balance factor is not –1, 0, or 1), so we apply LL rotation as shown in tree<br>
+&nbsp; &nbsp;  (c). While rotation, node B becomes the root, with T1 and A as its left and right child. T2 
+and T3 become the left and right sub-trees of A. <br>
+<b>RR Rotation:</b>Let us now discuss where and how RR rotation is applied. Consider the tree 
+given in  which shows an AVL tree. Tree <br>
+&nbsp; &nbsp;  (a) is an AVL tree. In tree <br>
+&nbsp; &nbsp;   (b), a new 
+node is inserted in the right sub-tree of the right sub-tree of the critical node A (node A is 
+the critical node because it is the closest ancestor whose balance factor is not –1, 0, or 1), 
+so we 
+apply RR rotation as shown in tree.<br>
+&nbsp; &nbsp; (c). Note that the new node has now become a part of 
+tree T3 . While rotation, node B becomes the root, with A and T3 as its left and right child. 
+T1 and T2 become the left and right sub-trees of A.<br>
+<img src="avlimg4.png" alt="avl tree" class="avlimg"> <br>
+
+<b>LR and RL Rotations:</b> Consider the AVL tree given in Fig. 10.44 and see how LR
+rotation is done to rebalance the tree. <br>
+<img src="avlimg5.png" alt="avl tree" class="avlimg"> <br>
+&nbsp; &nbsp;  (a) is an AVL tree. In tree <br>
+&nbsp; &nbsp;   (b) a new node is inserted in the right sub-tree of the left subtree of the critical node A (node A is the critical node because it is the closest ancestor whose 
+balance factor is not –1, 0 or 1), so we apply LR rotation as shown in tree<br>
+&nbsp; &nbsp; (c) Note that the new 
+node has now become a part of tree T2 . While rotation, node C becomes the root, with B and A 
+as its left and right children. Node B has T1 and T2 as its left and right sub-trees and T3 and T4 
+become the left and right sub-trees of node A. Now, consider the AVL tree given in Fig. 10.46 and 
+see how RL rotation is done to rebalance the tree<br>
+<img src="avlimg6.png" alt="avl image" class="avlimg"> <br>
+&nbsp; &nbsp;  (a) is an AVL tree. In tree <br>
+&nbsp; &nbsp;   (b), a new node is inserted in the left sub-tree of the right sub-tree 
+of the critical node A (node A is the critical node because it is the closest ancestor whose balance 
+factor is not –1, 0, or 1), so we apply RL rotation as shown in tree<br>
+&nbsp; &nbsp; (c). Note that the new node has 
+now become a part of tree T2 . While rotation, node C becomes the root, with A and B as its left 
+and right children. Node A has T1 and T2 as its left and right sub-trees and T3 and T4 become the 
+left and right sub-trees of node B.<br>
+    </p>
+    <p class="para">• <b> Deleting a Node from an AVL Tree:</b> <br>
+        Deletion of a node in an AVL tree is similar to that of binary search trees. But it goes one step 
+ahead. Deletion may disturb the AVLness of the tree, so to rebalance the AVL tree, we need to 
+perform rotations. There are two classes of rotations that can be performed on an AVL tree after 
+deleting a given node. These rotations are R rotation and L rotation. On deletion of node X from 
+the AVL tree, if node A becomes the critical node (closest ancestor node on the path from X to the 
+root node that does not have its balance factor as 1, 0, or –1), then the type of rotation depends on 
+whether X is in the left sub-tree of A or in its right sub-tree. If the node to be deleted is present in 
+the left sub-tree of A, then L rotation is applied, else if X is in the right sub-tree, R rotation is 
+performed. Further, there are three categories of L and R rotations. The variations of L rotation are 
+L–1, L0, and L1 rotation. Correspondingly for R rotation, there are R0, R–1, and R1 rotations. In 
+this section, we will discuss only R rotation. L rotations are the mirror images of R rotations. <br> 
+<b> R0 Rotation:</b> Let B be the root of the left or right sub-tree of A (critical node). R0 rotation is 
+applied if the balance factor of B is 0. This is illustrated in Fig.
+critical node A (node A is the critical node because it is the closest ancestor whose balance factor 
+is not –1, 0, or 1). Since the balance factor of node B is 0, we apply R0 rotation as shown in tree 
+(c).During the process of rotation, node B becomes the root, with T1 and A as its left and right 
+child. T2 and T3 become the left and right sub-trees of A.  <br>
+  <img src="avlimg7.png" alt="avl tree" class="avlimg"> <br>
+<b>R1 Rotation :</b>Let B be the root of the left or right sub-tree of A (critical node). R1 rotation is 
+applied if the balance factor of B is 1. Observe that R0 and R1 rotations are similar to LL rotations; 
+the only difference is that R0 and R1 rotations yield different balance factors. This is illustrated in 
+Fig. 10.50. Tree <br>
+&nbsp; &nbsp;  (a) is an AVL tree. In tree <br>
+&nbsp; &nbsp;   (b), the node X is to be deleted from the right sub-tree 
+of the critical node A (node A is the critical node because it is the closest ancestor whose balance 
+factor is not –1, 0, or 1). Since the balance factor of node B is 1, we apply R1 rotation as shown in 
+tree <br>
+&nbsp; &nbsp; (c). During the process of rotation, node B becomes the root, with T1 and A as its left and 
+right children. T2 and T3 become the left and right sub-trees of A.<br>
+<img src="avlimg8.png" alt="avl tree" class="avlimg"> <br>
+
+<b>R–1 Rotation :</b> Let B be the root of the left or right sub-tree of A (critical node). R–1 rotation is applied if the 
+balance factor of B is –1. Observe that R–1 rotation is similar to LR rotation. This is illustrated in 
+Fig. 10.52.<br>
+<img src="avlimg9.png" alt="avl tree" class="avlimg">
+&nbsp; &nbsp;  (a) is an AVL tree. In tree <br>
+&nbsp; &nbsp;   (b), the node X is to be deleted from the right sub-tree of the 
+critical node A (node A is the critical node because it is the closest ancestor whose balance factor 
+is not –1, 0 or 1). Since the balance factor of node B is –1, we apply R–1 rotation as shown in 
+tree<br>
+&nbsp; &nbsp; (c).
+While rotation, node C becomes the root, with T1 and A as its left and right child. T2 and T3 
+become the left and right sub-trees of A.<br>
+    </p>
+</p>
+    </p>
+
+</body>
+</html>
+
+</body>
+</html>
