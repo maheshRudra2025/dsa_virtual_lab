@@ -36,6 +36,98 @@ We welcome contributions from developers of all skill levels! Whether you're a s
 5.  **Start coding**. Comment on an issue to let others know you're working on it.
 6.  **Submit a Pull Request (PR)**. Once your changes are ready, submit a PR to the `main` branch. Please provide a clear title and description of your changes, referencing the issue it addresses.
 
+## ⚙️ Local Setup Instructions
+
+Follow these steps to get the project up and running on your local machine.
+
+### Prerequisites
+
+-   Git installed on your system.
+-   Node.js installed on your system.
+-   A code editor like VS Code.
+
+### Step-by-Step Guide
+
+1.  **Clone the Repository**:
+    ```bash
+    git clone [https://github.com/maheshRudra2025/dsa_virtual_lab.git](https://github.com/maheshRudra2025/dsa_virtual_lab.git)
+    ```
+
+2.  **Navigate to the Project Directory**:
+    ```bash
+    cd dsa_virtual_lab
+    ```
+
+3.  **Install Dependencies**:
+    ```bash
+    npm install
+    ```
+
+4.  **Run the Project**:
+    ```bash
+    npm start
+    ```
+    This will start the development server, and the application will be available in your browser at `http://localhost:3000`.
+
+## 🔄 Keeping Your Fork Up to Date
+
+To ensure your forked repository stays in sync with the original `dsa_virtual_lab` project, follow these steps:
+
+1.  **Add the Original Repository as a Remote (`upstream`)**:
+    ```bash
+    git remote add upstream [https://github.com/maheshRudra2025/dsa_virtual_lab.git](https://github.com/maheshRudra2025/dsa_virtual_lab.git)
+    ```
+
+2.  **Fetch the Latest Changes from the Original Repository**:
+    ```bash
+    git fetch upstream
+    ```
+
+3.  **Merge Changes into Your Local `main` Branch**:
+    ```bash
+    git checkout main
+    git merge upstream/main
+    ```
+
+4.  **Push the Updated `main` Branch to Your Fork**:
+    ```bash
+    git push origin main
+    ```
+
+## ⚠️ Resolving Merge Conflicts
+
+Merge conflicts can occur when changes on the remote branch conflict with your local changes. Here’s a simple process to resolve them:
+
+1.  **Fetch and Merge the `upstream` Branch**:
+    * Follow the steps above to run `git fetch upstream` and `git merge upstream/main`. This will show you which files have conflicts.
+
+2.  **Open the Conflicted Files**:
+    * Your code editor will highlight the conflicts. A conflict is marked by special Git markers:
+    ```
+    <<<<<<< HEAD
+    Your local changes
+    =======
+    Incoming changes from upstream
+    >>>>>>> upstream/main
+    ```
+
+3.  **Manually Edit the Files**:
+    * Carefully review the conflicting code and decide which version to keep. You can choose to keep your changes, the incoming changes, or a combination of both.
+    * **Delete the Git markers (`<<<<<<<`, `=======`, `>>>>>>>`)** after you've resolved the conflict.
+
+4.  **Stage the Resolved Files**:
+    ```bash
+    git add <path/to/conflicted/file>
+    ```
+
+5.  **Complete the Merge**:
+    ```bash
+    git commit -m "Resolved merge conflicts"
+    ```
+
+6.  **Push Your Changes**:
+    * Once all conflicts are resolved and committed, you can push your local branch to your fork.
+
 ## 📄 License
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
