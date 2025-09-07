@@ -71,7 +71,9 @@ Follow these steps to get the project up and running on your local machine.
 
 ## 🔄 Keeping Your Fork Up to Date
 
-To ensure your forked repository stays in sync with the original `dsa_virtual_lab` project, follow these steps:
+To ensure your forked repository stays in sync with the original `dsa_virtual_lab` project, you must use a specific set of commands. A simple `git pull` will not work because it only fetches changes from your personal fork.
+
+Follow these steps to get the latest changes from the original repository:
 
 1.  **Add the Original Repository as a Remote (`upstream`)**:
     ```bash
