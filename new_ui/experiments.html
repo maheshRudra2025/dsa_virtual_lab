@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiments - DSA Virtual Lab</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">DSA Virtual Lab</a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="experiments.html">Experiments</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="experiments-list">
+            <div class="container">
+                <h1>List of Experiments</h1>
+                <div class="card-container">
+                    <div class="experiment-card">
+                        <h3>Stack</h3>
+                        <p>Visualize the stack data structure and its operations.</p>
+                        <a href="dsa_virtual_lab_OS/src/experiments/linear-structures/stack/visualization.html" class="btn">Visualize</a>
+                    </div>
+                    <div class="experiment-card">
+                        <h3>Queue</h3>
+                        <p>Visualize the queue data structure and its operations.</p>
+                        <a href="dsa_virtual_lab_OS/src/experiments/linear-structures/queue/visualization.html" class="btn">Visualize</a>
+                    </div>
+                    <div class="experiment-card">
+                        <h3>Binary Search Tree</h3>
+                        <p>Visualize the binary search tree and its operations.</p>
+                        <a href="dsa_virtual_lab_OS/src/experiments/trees/bst/visualization.html" class="btn">Visualize</a>
+                    </div>
+                    <div class="experiment-card">
+                        <h3>Graph</h3>
+                        <p>Visualize graph traversal algorithms like BFS and DFS.</p>
+                        <a href="dsa_virtual_lab_OS/src/experiments/graphs/bfs/visualization.html" class="btn">Visualize</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="year"></span> DSA Virtual Lab. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
