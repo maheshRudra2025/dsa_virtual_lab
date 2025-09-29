@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSA Virtual Lab</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">DSA Virtual Lab</a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="experiments.html">Experiments</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Welcome to the DSA Virtual Lab</h1>
+                <p>An interactive platform to learn and visualize data structures and algorithms.</p>
+                <a href="experiments.html" class="btn">Get Started</a>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="container">
+                <div class="feature">
+                    <h2>Interactive Visualizations</h2>
+                    <p>Visualize complex algorithms step-by-step to understand their inner workings.</p>
+                </div>
+                <div class="feature">
+                    <h2>Hands-on Practice</h2>
+                    <p>Implement data structures and algorithms in our integrated coding environment.</p>
+                </div>
+                <div class="feature">
+                    <h2>Self-Paced Learning</h2>
+                    <p>Learn at your own pace with our comprehensive tutorials and examples.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="year"></span> DSA Virtual Lab. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

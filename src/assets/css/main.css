@@ -1,0 +1,248 @@
+ @import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300&display=swap');
+
+*{
+        background-color: rgb(227, 249, 255);
+        color: rgb(2, 19, 150);
+        font-family: 'Tilt Neon', sans-serif;
+}
+
+/* navigation bar  */
+.navlogo{
+        height: 5vw;
+        width: 5vw;
+        text-decoration: none;
+        /* position: sticky; */
+}
+#navelements{
+        font-size:1.5vw;
+        text-align: right;
+        margin-top: -4vw;
+}
+#navelements :hover{
+        color: yellowgreen;
+        cursor:pointer;
+}
+.navelements{
+        text-decoration: none;
+        margin-left: 4vw;
+        margin-right: 2vw;
+}
+#introduction{
+        display: flex;
+        flex-direction: column;
+
+        margin-top: 5vw;
+}
+.heading{
+        text-align: center;
+        font-size: 4vw;
+}
+.heading1{
+        margin-top: 1vw;
+        font-size: 2.5vw;
+}
+.heading2{
+        margin-top: 1vw;
+        font-size: 2.5vw;
+        color: #f44336;
+}
+.header{
+        margin-top: 5vw; 
+        text-align: center;
+        font-size: 2vw;
+}
+.headerelements1{
+        text-decoration: none;
+        margin-right: 25vw;
+}
+.headerelements2{
+        text-decoration: none;
+}
+.headerelements3{
+        text-decoration: none;
+        margin-left: 25vw;
+}
+.para{
+        color: black;
+        font-size: 1.2vw;
+        text-align: justify;
+        font-family: 'Signika Negative', sans-serif;
+}
+
+
+/* stack  */
+.stackimage{
+ height: 25vw;
+ width: 50vw;
+ margin-left: 23vw;
+}
+
+/* bst */
+.bstimg{
+        height: 25vw;
+        width: 45vw;
+
+}
+/* queue */
+.queueimg{
+        height: 25vw;
+        width: 50vw;
+        margin-left: 23vw;
+}
+/* btree */
+.btreeimg{
+        height: 25vw;
+ margin-left: 23vw;     
+ width: 50vw;
+}
+
+/* avl */
+.avlimg{
+        height: 25vw;
+        width: 50vw;
+        margin-left: 23vw;
+}
+/* bfs */
+.bfsimg{
+        height: 25vw;
+        width: 30vw;
+        margin-left: 30vw; 
+}
+/* dfs   */
+.dfsimg{
+        height: 25vw;
+        width: 30vw;
+        margin-left: 23vw;
+}
+
+
+/* list of Experiments */
+#loe{
+        margin-left: 8vw;
+        /* margin-top: -10vw;
+         */
+}
+#sideimg{
+        height: 27vw;
+        width: 60vw;
+        margin-left: 50vw;
+        margin-top: 15vw;
+}
+#leftside{
+        display: flex;
+        flex-direction: column;
+        margin-top: -43vw;
+}
+
+.left{
+        height: 8vw;
+        width: 13vw;
+        margin-bottom: 2vw;
+}
+#leftanchor{
+        margin-left: 8vw;
+        margin-top: -37vw;
+        width: 5vw;       
+        padding-bottom: 3vw;
+}
+#leftanchor :hover{
+        color: yellowgreen;
+        background-color: black;
+        cursor:pointer;
+}
+.leftanchor{
+        display: flex;
+        flex-direction: column;
+        margin-left:  2vw;
+        margin-bottom: 7.2vw;
+        text-decoration: none;
+        font-size: 2vw;
+        font-weight: bold;
+}
+#rightside{
+        display: flex;
+        flex-direction: column;
+        margin-left: 20vw;
+        margin-top: -42vw;
+        width: 13vw;
+}
+.right{
+        height: 8vw;
+        width: 13vw;
+        margin-bottom: 3vw;
+}
+#rightanchor{
+        margin-left: 28vw;
+        margin-top: -30vw;
+        width: 5vw;       
+        padding-bottom: 3vw;
+}
+#rightanchor :hover{
+        color: yellowgreen;
+        background-color: black;
+        cursor:pointer;
+}
+.rightanchor{
+        display: flex;
+        flex-direction: column;
+        margin-left:  2vw;
+        margin-bottom: 7.2vw;
+        text-decoration: none;
+        font-size: 2vw;
+        font-weight: bold;
+}
+.button{
+        font-size: 2vw;
+        height: 3vw;
+        width: 12vw;
+        border-radius: 1vw;
+        border: 2px solid black;
+}
+.button :hover{
+        color: yellowgreen;
+        background-color: black;
+        cursor:pointer;
+}
+
+/* #accordian{
+        width: 50vw;
+        /* border: 2px solid black; 
+        margin-left: 15vw;
+}
+#accordian li{
+        margin: 5vw;
+        width: 100%;
+        margin-bottom: 2vw;
+        border-radius: 4px black;
+        list-style: none;
+}
+#accordian li label {
+        display: flex;
+        align-items: center;
+        font-size: 2vw;
+        justify-content: space-between;
+        cursor: pointer;
+        font-weight: bold;
+}
+#accordian li label span{
+        transform: rotate(90deg);
+        font-size: 2vw;
+        
+}
+#accordian label + input[type="radio"]{
+        display: none;
+}
+#accordian .content{
+        display: flex;
+        flex-direction: column;
+        padding: 0px 10px;
+        line-height: 26px;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s;
+        font-size: 1.5vw;
+}
+#accordian label + input[type="radio"]:checked + .content{
+        max-height: 12vw;
+} */
