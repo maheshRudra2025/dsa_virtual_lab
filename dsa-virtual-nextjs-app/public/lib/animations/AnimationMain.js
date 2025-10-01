@@ -196,13 +196,30 @@ function addControlToAnimationBar(type, name, containerType) {
   element.setAttribute("value", name);
 
   var tableEntry = document.createElement("td");
-
+  tableEntry.style.padding = "5px";
   tableEntry.appendChild(element);
 
   var controlBar = document.getElementById("GeneralAnimationControls");
 
-  //Append the element in page (in span).
-  controlBar.appendChild(tableEntry);
+  if (!controlBar) {
+    console.error("GeneralAnimationControls table not found");
+    return element;
+  }
+
+  // Find the first row in the table, or create one if it doesn't exist
+  var tableRow = controlBar.querySelector("tr");
+  if (!tableRow) {
+    tableRow = document.createElement("tr");
+    var tbody = controlBar.querySelector("tbody");
+    if (tbody) {
+      tbody.appendChild(tableRow);
+    } else {
+      controlBar.appendChild(tableRow);
+    }
+  }
+
+  //Append the element to the table row
+  tableRow.appendChild(tableEntry);
   return element;
 }
 

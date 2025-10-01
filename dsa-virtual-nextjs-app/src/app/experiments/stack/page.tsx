@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef } from "react";
 
 export default function StackExperiment() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -9,7 +9,7 @@ export default function StackExperiment() {
   useEffect(() => {
     // Prevent multiple script loading
     if (scriptsLoadedRef.current) return;
-    
+
     // Load scripts dynamically in the correct order
     const loadScripts = async () => {
       // Helper function to load a script
@@ -22,9 +22,9 @@ export default function StackExperiment() {
             return;
           }
 
-          const script = document.createElement('script');
+          const script = document.createElement("script");
           script.src = src;
-          script.type = 'text/javascript';
+          script.type = "text/javascript";
           script.onload = () => {
             console.log(`Loaded: ${src}`);
             resolve();
@@ -38,203 +38,244 @@ export default function StackExperiment() {
       const loadCSS = (href: string) => {
         const existingLink = document.querySelector(`link[href="${href}"]`);
         if (existingLink) return;
-        
-        const link = document.createElement('link');
-        link.rel = 'stylesheet';
+
+        const link = document.createElement("link");
+        link.rel = "stylesheet";
         link.href = href;
         document.head.appendChild(link);
       };
 
       try {
-        console.log('Starting to load scripts...');
-        
+        console.log("Starting to load scripts...");
+
         // Load CSS files
-        loadCSS('/lib/third-party/jquery-ui-1.8.11.custom.css');
+        loadCSS("/lib/third-party/jquery-ui-1.8.11.custom.css");
 
         // Load scripts in order
-        await loadScript('/lib/third-party/jquery-1.5.2.min.js');
-        await loadScript('/lib/third-party/jquery-ui-1.8.11.custom.min.js');
-        
+        await loadScript("/lib/third-party/jquery-1.5.2.min.js");
+        await loadScript("/lib/third-party/jquery-ui-1.8.11.custom.min.js");
+
         // Load animation framework
-        await loadScript('/lib/animations/CustomEvents.js');
-        await loadScript('/lib/animations/UndoFunctions.js');
-        await loadScript('/lib/animations/AnimatedObject.js');
-        await loadScript('/lib/animations/AnimatedLabel.js');
-        await loadScript('/lib/animations/AnimatedCircle.js');
-        await loadScript('/lib/animations/AnimatedRectangle.js');
-        await loadScript('/lib/animations/AnimatedLinkedList.js');
-        await loadScript('/lib/animations/HighlightCircle.js');
-        await loadScript('/lib/animations/Line.js');
-        await loadScript('/lib/animations/ObjectManager.js');
-        await loadScript('/lib/animations/AnimationMain.js');
-        
+        await loadScript("/lib/animations/CustomEvents.js");
+        await loadScript("/lib/animations/UndoFunctions.js");
+        await loadScript("/lib/animations/AnimatedObject.js");
+        await loadScript("/lib/animations/AnimatedLabel.js");
+        await loadScript("/lib/animations/AnimatedCircle.js");
+        await loadScript("/lib/animations/AnimatedRectangle.js");
+        await loadScript("/lib/animations/AnimatedLinkedList.js");
+        await loadScript("/lib/animations/HighlightCircle.js");
+        await loadScript("/lib/animations/Line.js");
+        await loadScript("/lib/animations/ObjectManager.js");
+        await loadScript("/lib/animations/AnimationMain.js");
+
         // Load algorithm files
-        await loadScript('/lib/algorithms/Algorithm.js');
-        await loadScript('/lib/algorithms/StackLL.js');
-        
-        console.log('All scripts loaded successfully');
+        await loadScript("/lib/algorithms/Algorithm.js");
+        await loadScript("/lib/algorithms/StackLL.js");
+
+        console.log("All scripts loaded successfully");
         scriptsLoadedRef.current = true;
-        
+
         // Wait a bit for DOM to be fully ready
         setTimeout(() => {
           initializeVisualization();
         }, 100);
-        
       } catch (error) {
-        console.error('Error loading scripts:', error);
+        console.error("Error loading scripts:", error);
       }
     };
 
     const initializeVisualization = () => {
       try {
-        console.log('Attempting to initialize visualization...');
-        
+        console.log("Attempting to initialize visualization...");
+
         // Check if canvas element exists
-        const canvas = document.getElementById('canvas') as HTMLCanvasElement;
+        const canvas = document.getElementById("canvas") as HTMLCanvasElement;
         if (!canvas) {
-          console.error('Canvas element not found');
+          console.error("Canvas element not found");
           return;
         }
-        
+
         // Set global canvas reference (required by the animation system)
         (window as any).canvas = canvas;
-        
+
         // Check if required classes exist
-        if (typeof (window as any).StackLL !== 'function') {
-          console.error('StackLL constructor not found');
+        if (typeof (window as any).StackLL !== "function") {
+          console.error("StackLL constructor not found");
           return;
         }
-        
+
         // The AnimationMain.js file has initCanvas function that creates all buttons
         // Let's call the existing init function which should use the real initCanvas
-        if (typeof (window as any).init === 'function') {
-          console.log('Calling existing init function...');
+        if (typeof (window as any).init === "function") {
+          console.log("Calling existing init function...");
           (window as any).init();
-          
+
           // After calling init(), set up proper event listeners and button management
           setTimeout(() => {
             setupAnimationControls();
           }, 500);
-          
-          console.log('Visualization initialized successfully via init()');
+
+          console.log("Visualization initialized successfully via init()");
           return;
         }
-        
-        console.log('Init function not found, trying manual initialization');
-        
+
+        console.log("Init function not found, trying manual initialization");
       } catch (error) {
-        console.error('Error initializing visualization:', error);
-        console.log('Stack trace:', error);
+        console.error("Error initializing visualization:", error);
+        console.log("Stack trace:", error);
       }
     };
 
     const setupAnimationControls = () => {
       const animationManager = (window as any).animationManager;
       if (!animationManager) {
-        console.error('Animation manager not found');
+        console.error("Animation manager not found");
         return;
       }
 
-      console.log('Setting up animation controls...');
-      console.log('Animation manager methods:', Object.getOwnPropertyNames(animationManager));
+      console.log("Setting up animation controls...");
+      console.log(
+        "Animation manager methods:",
+        Object.getOwnPropertyNames(animationManager)
+      );
 
       // Set up the animation event handlers using the original pattern
       // The original system expects these global functions to exist
-      (window as any).animUndoUnavailable = function() {
-        console.log('animUndoUnavailable called');
+      (window as any).animUndoUnavailable = function () {
+        console.log("animUndoUnavailable called");
         const stepBackButton = (window as any).stepBackButton;
         const skipBackButton = (window as any).skipBackButton;
         if (stepBackButton) stepBackButton.disabled = true;
         if (skipBackButton) skipBackButton.disabled = true;
       };
 
-      (window as any).animWaiting = function() {
-        console.log('animWaiting called');
+      (window as any).animWaiting = function () {
+        console.log("animWaiting called");
         const stepForwardButton = (window as any).stepForwardButton;
         const skipForwardButton = (window as any).skipForwardButton;
         const playPauseButton = (window as any).playPauseBackButton;
         const stepBackButton = (window as any).stepBackButton;
         const skipBackButton = (window as any).skipBackButton;
-        
+
         if (stepForwardButton) stepForwardButton.disabled = false;
         if (skipForwardButton) skipForwardButton.disabled = false;
         if (playPauseButton) {
           playPauseButton.disabled = false;
-          playPauseButton.value = 'Play';
+          playPauseButton.value = "Play";
         }
         // Enable undo buttons if undo stack is available
-        if (animationManager && animationManager.undoStack && animationManager.undoStack.length > 0) {
+        if (
+          animationManager &&
+          animationManager.undoStack &&
+          animationManager.undoStack.length > 0
+        ) {
           if (stepBackButton) stepBackButton.disabled = false;
           if (skipBackButton) skipBackButton.disabled = false;
         }
       };
 
-      (window as any).animStarted = function() {
-        console.log('animStarted called');
+      (window as any).animStarted = function () {
+        console.log("animStarted called");
         const stepForwardButton = (window as any).stepForwardButton;
         const skipForwardButton = (window as any).skipForwardButton;
         const playPauseButton = (window as any).playPauseBackButton;
-        
+
         if (stepForwardButton) stepForwardButton.disabled = true;
         if (skipForwardButton) skipForwardButton.disabled = false;
         if (playPauseButton) {
           playPauseButton.disabled = false;
-          playPauseButton.value = 'Pause';
+          playPauseButton.value = "Pause";
         }
       };
 
-      (window as any).animEnded = function() {
-        console.log('animEnded called');
+      (window as any).animEnded = function () {
+        console.log("animEnded called");
         const stepForwardButton = (window as any).stepForwardButton;
         const skipForwardButton = (window as any).skipForwardButton;
         const playPauseButton = (window as any).playPauseBackButton;
         const stepBackButton = (window as any).stepBackButton;
         const skipBackButton = (window as any).skipBackButton;
-        
+
         if (stepForwardButton) stepForwardButton.disabled = true;
         if (skipForwardButton) skipForwardButton.disabled = true;
         if (playPauseButton) playPauseButton.disabled = true;
-        
+
         // Keep undo buttons enabled if undo is available
-        if (animationManager && animationManager.undoStack && animationManager.undoStack.length > 0) {
+        if (
+          animationManager &&
+          animationManager.undoStack &&
+          animationManager.undoStack.length > 0
+        ) {
           if (stepBackButton) stepBackButton.disabled = false;
           if (skipBackButton) skipBackButton.disabled = false;
         }
       };
 
       // Set up event listeners using the custom event system
-      if (typeof animationManager.addListener === 'function') {
+      if (typeof animationManager.addListener === "function") {
         // Remove any existing listeners first
         try {
-          animationManager.removeListener('AnimationStarted', window, (window as any).animStarted);
-          animationManager.removeListener('AnimationEnded', window, (window as any).animEnded);
-          animationManager.removeListener('AnimationWaiting', window, (window as any).animWaiting);
-          animationManager.removeListener('AnimationUndoUnavailable', window, (window as any).animUndoUnavailable);
+          animationManager.removeListener(
+            "AnimationStarted",
+            window,
+            (window as any).animStarted
+          );
+          animationManager.removeListener(
+            "AnimationEnded",
+            window,
+            (window as any).animEnded
+          );
+          animationManager.removeListener(
+            "AnimationWaiting",
+            window,
+            (window as any).animWaiting
+          );
+          animationManager.removeListener(
+            "AnimationUndoUnavailable",
+            window,
+            (window as any).animUndoUnavailable
+          );
         } catch (e) {
           // Ignore errors if listeners don't exist
         }
 
         // Add the listeners
-        animationManager.addListener('AnimationStarted', window, (window as any).animStarted);
-        animationManager.addListener('AnimationEnded', window, (window as any).animEnded);
-        animationManager.addListener('AnimationWaiting', window, (window as any).animWaiting);
-        animationManager.addListener('AnimationUndoUnavailable', window, (window as any).animUndoUnavailable);
-        
-        console.log('Animation event listeners added successfully');
+        animationManager.addListener(
+          "AnimationStarted",
+          window,
+          (window as any).animStarted
+        );
+        animationManager.addListener(
+          "AnimationEnded",
+          window,
+          (window as any).animEnded
+        );
+        animationManager.addListener(
+          "AnimationWaiting",
+          window,
+          (window as any).animWaiting
+        );
+        animationManager.addListener(
+          "AnimationUndoUnavailable",
+          window,
+          (window as any).animUndoUnavailable
+        );
+
+        console.log("Animation event listeners added successfully");
       }
 
       // Initial button state - disable all animation controls initially
       setTimeout(() => {
-        console.log('Setting initial button states...');
+        console.log("Setting initial button states...");
         const buttons = [
           (window as any).stepBackButton,
           (window as any).stepForwardButton,
           (window as any).skipBackButton,
           (window as any).skipForwardButton,
-          (window as any).playPauseBackButton
+          (window as any).playPauseBackButton,
         ];
 
-        buttons.forEach(button => {
+        buttons.forEach((button) => {
           if (button) {
             button.disabled = true;
             console.log(`Disabled button: ${button.value}`);
@@ -252,16 +293,16 @@ export default function StackExperiment() {
         try {
           (window as any).currentAlg = null;
         } catch (e) {
-          console.log('Cleanup completed');
+          console.log("Cleanup completed");
         }
       }
-      
+
       // Clear any running timers
       if ((window as any).timer) {
         clearTimeout((window as any).timer);
         (window as any).timer = null;
       }
-      
+
       // Clean up global functions
       if ((window as any).animationManager) {
         (window as any).animationManager = null;
@@ -274,8 +315,9 @@ export default function StackExperiment() {
 
   return (
     <div className="visualization-container">
-      <style dangerouslySetInnerHTML={{
-        __html: `
+      <style
+        dangerouslySetInnerHTML={{
+          __html: `
           @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
           
           .visualization-container {
@@ -415,33 +457,34 @@ export default function StackExperiment() {
           .ui-slider-handle {
             background-color: #60b389;
           }
-        `
-      }} />
-      
+        `,
+        }}
+      />
+
       {/* Main visualization container */}
       <div id="container">
-        <div id="header">  
+        <div id="header">
           <h1>Stack</h1>
         </div>
-        
-        <div id="mainContent"> 
+
+        <div id="mainContent">
           <div id="algoControlSection">
             {/* Table for buttons to control specific animation (insert/find/etc) */}
             {/* (filled in by javascript code specific to the animation) */}
-            <table id="AlgorithmSpecificControls"> 
+            <table id="AlgorithmSpecificControls">
               {/* Controls will be populated by JavaScript */}
-            </table> 
+            </table>
           </div>
-          
+
           {/* Drawing canvas where all animation is done */}
           <canvas ref={canvasRef} id="canvas" width="800" height="400"></canvas>
-          
+
           <div id="generalAnimationControlSection">
             {/* Table for buttons to control general animation (play/pause/undo/etc) */}
             {/* (filled in by javascript code, specifically AnimationMain.js) */}
-            <table id="GeneralAnimationControls"> 
+            <table id="GeneralAnimationControls">
               {/* Controls will be populated by JavaScript */}
-            </table>		
+            </table>
           </div>
         </div>
       </div>
