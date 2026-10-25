@@ -11,9 +11,9 @@ dsa_virtual_lab_OS/
 ├── index.html                     # Entry point - redirects to main app
 ├── README.md                      # Project documentation
 ├── PROJECT_STRUCTURE.md           # This file - explains project organization
-├── LICENSE.md                     # MIT License
 ├── CODE_OF_CONDUCT.md            # Community guidelines
 ├── CONTRIBUTE.md                 # Contribution guidelines
+├── STYLE_GUIDE.md                # Design system, color palette, typography & accessibility guide
 │
 └── src/                          # Main source directory
     ├── pages/                    # Application pages

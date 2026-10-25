@@ -4,9 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feedback - DSA Virtual Lab</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -19,6 +20,7 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="experiments.html">Experiments</a></li>
                     <li><a href="feedback.html">Feedback</a></li>
+                    <li><a href="styleguide.html">Style Guide</a></li>
                 </ul>
             </nav>
         </div>
@@ -30,10 +32,19 @@
                 <h1>Feedback</h1>
                 <p>We would love to hear your thoughts, suggestions, or issues. </p>
                 <form>
-                    <input type="text" name="name" placeholder="Your Name" required>
-                    <input type="email" name="email" placeholder="Your Email" required>
-                    <textarea name="message" placeholder="Your Message" rows="6" required></textarea>
-                    <button type="submit" class="btn">Submit Feedback</button>
+                    <div class="form-group" style="display: flex; flex-direction: column; gap: var(--space-2);">
+                        <label for="name" style="font-size: var(--font-size-sm); font-weight: 600; color: var(--color-text-primary);">Your Name</label>
+                        <input id="name" type="text" name="name" placeholder="e.g. Jane Doe" required>
+                    </div>
+                    <div class="form-group" style="display: flex; flex-direction: column; gap: var(--space-2);">
+                        <label for="email" style="font-size: var(--font-size-sm); font-weight: 600; color: var(--color-text-primary);">Your Email</label>
+                        <input id="email" type="email" name="email" placeholder="e.g. jane@example.com" required>
+                    </div>
+                    <div class="form-group" style="display: flex; flex-direction: column; gap: var(--space-2);">
+                        <label for="message" style="font-size: var(--font-size-sm); font-weight: 600; color: var(--color-text-primary);">Your Message</label>
+                        <textarea id="message" name="message" placeholder="Share your thoughts, suggestions, or bug reports..." rows="6" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit Feedback</button>
                 </form>
             </div>
         </section>
