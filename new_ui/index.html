@@ -4,9 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DSA Virtual Lab</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -19,6 +20,7 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="experiments.html">Experiments</a></li>
                     <li><a href="feedback.html">Feedback</a></li>
+                    <li><a href="styleguide.html">Style Guide</a></li>
                 </ul>
             </nav>
         </div>
@@ -27,9 +29,15 @@
     <main>
         <section class="hero">
             <div class="container">
+                <div style="display: inline-flex; align-items: center; gap: var(--space-2); padding: var(--space-1) var(--space-3); font-size: var(--font-size-xs); font-weight: 600; color: var(--color-primary-700); background-color: var(--color-primary-50); border: 1px solid var(--color-primary-200); border-radius: var(--radius-full); margin-bottom: var(--space-4); letter-spacing: var(--letter-spacing-wide);">
+                    <span>✨ Interactive Learning Platform</span>
+                </div>
                 <h1>Welcome to the DSA Virtual Lab</h1>
-                <p>An interactive platform to learn and visualize data structures and algorithms.</p>
-                <a href="experiments.html" class="btn">Get Started</a>
+                <p>An interactive platform to learn, simulate, and visualize data structures and algorithms with real-time step execution.</p>
+                <div style="display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap;">
+                    <a href="experiments.html" class="btn btn-primary">Explore Experiments</a>
+                    <a href="styleguide.html" class="btn" style="background-color: var(--color-bg-surface); color: var(--color-text-primary); border: 1px solid var(--color-border-strong);">View Style Guide</a>
+                </div>
             </div>
         </section>
 

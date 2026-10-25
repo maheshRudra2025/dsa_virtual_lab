@@ -5,14 +5,22 @@ export default function Home() {
     <>
       <section className="hero">
         <div className="container">
+          <div className="hero-badge">
+            <span>✨ Interactive Learning Platform</span>
+          </div>
           <h1>Welcome to the DSA Virtual Lab</h1>
           <p>
-            An interactive platform to learn and visualize data structures and
-            algorithms.
+            An interactive platform to learn, simulate, and visualize data
+            structures and algorithms with real-time step execution.
           </p>
-          <Link href="/experiments" className="btn">
-            Get Started
-          </Link>
+          <div className="hero-cta-group">
+            <Link href="/experiments" className="btn btn-primary">
+              Explore Experiments
+            </Link>
+            <Link href="/feedback" className="btn btn-outline">
+              Share Feedback
+            </Link>
+          </div>
         </div>
       </section>
 

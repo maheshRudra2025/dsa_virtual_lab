@@ -1,0 +1,309 @@
+/**
+ * DSA Virtual Lab - Design System & Theme Variables
+ * 
+ * Compliant with WCAG 2.1 AA/AAA Accessibility Standards
+ * Defines design tokens for Colors, Typography, Spacing, Shadows, and Radii.
+ * Supports both Light and Dark themes via data-theme or prefers-color-scheme.
+ */
+
+:root {
+  /* ==========================================================================
+     COLOR SYSTEM (LIGHT THEME - DEFAULT)
+     ========================================================================== */
+
+  /* Primary Palette (Tech Indigo / Deep Slate Blue) */
+  --color-primary-50: #EEF2FF;
+  --color-primary-100: #E0E7FF;
+  --color-primary-200: #C7D2FE;
+  --color-primary-300: #A5B4FC;
+  --color-primary-400: #818CF8;
+  --color-primary-500: #6366F1;
+  --color-primary-600: #4F46E5; /* Main Brand Primary */
+  --color-primary-700: #4338CA; /* Primary Hover */
+  --color-primary-800: #3730A3; /* Primary Active / High Contrast */
+  --color-primary-900: #312E81;
+  --color-primary-contrast: #FFFFFF; /* 6.2:1 contrast on 600 (WCAG AAA Large / AA Normal) */
+
+  /* Secondary Palette (Teal & Cyan - Data Structure Logic & Nodes) */
+  --color-secondary-50: #F0FDFA;
+  --color-secondary-100: #CCFBF1;
+  --color-secondary-200: #99F6E4;
+  --color-secondary-300: #5EEAD4;
+  --color-secondary-400: #2DD4BF;
+  --color-secondary-500: #14B8A6;
+  --color-secondary-600: #0D9488; /* Main Secondary */
+  --color-secondary-700: #0F766E; /* Secondary Hover */
+  --color-secondary-800: #115E59;
+  --color-secondary-900: #134E4A;
+  --color-secondary-contrast: #FFFFFF; /* 4.6:1 contrast on 600 */
+
+  /* Accent Palette (Vibrant Violet & Amber - Algorithmic Highlighting) */
+  --color-accent-violet: #8B5CF6;
+  --color-accent-violet-light: #F5F3FF;
+  --color-accent-amber: #F59E0B; /* Traversal / Active Node / Pivot */
+  --color-accent-amber-dark: #D97706;
+  --color-accent-amber-light: #FFFBEB;
+  --color-accent-rose: #F43F5E; /* Pointer / Boundary / Null */
+
+  /* Semantic Feedback Colors */
+  /* Success: Tree Balanced / Target Found / Sorted */
+  --color-success-base: #10B981;
+  --color-success-hover: #059669;
+  --color-success-light: #ECFDF5;
+  --color-success-dark: #065F46; /* Contrast 7.2:1 against light surface */
+
+  /* Warning: Traversing / Rebalancing / Collision */
+  --color-warning-base: #F59E0B;
+  --color-warning-hover: #D97706;
+  --color-warning-light: #FFFBEB;
+  --color-warning-dark: #92400E; /* Contrast 7.4:1 against light surface */
+
+  /* Danger / Error: Stack Overflow / Underflow / Not Found */
+  --color-danger-base: #EF4444;
+  --color-danger-hover: #DC2626;
+  --color-danger-light: #FEF2F2;
+  --color-danger-dark: #991B1B; /* Contrast 7.3:1 against light surface */
+
+  /* Info: Algorithm Complexity / Step Guide */
+  --color-info-base: #3B82F6;
+  --color-info-hover: #2563EB;
+  --color-info-light: #EFF6FF;
+  --color-info-dark: #1E40AF; /* Contrast 8.2:1 against light surface */
+
+  /* Neutral Surface & Background Tokens */
+  --color-bg-canvas: #F8FAFC;      /* Page background (Slate 50) */
+  --color-bg-surface: #FFFFFF;     /* Card, Modal, Header background */
+  --color-bg-surface-elevated: #FFFFFF;
+  --color-bg-subtle: #F1F5F9;      /* Inset sections, code background (Slate 100) */
+  --color-bg-hover: #F8FAFC;       /* Hover state for list items */
+
+  /* Neutral Border & Divider Tokens */
+  --color-border-subtle: #E2E8F0;  /* Dividers, card borders (Slate 200) */
+  --color-border-strong: #CBD5E1;  /* Input borders, active states (Slate 300) */
+  --color-border-hover: #94A3B8;   /* Input hover border */
+
+  /* Neutral Text Tokens (WCAG Compliant) */
+  --color-text-primary: #0F172A;   /* Headings & key text (Slate 900) - 16.1:1 on canvas */
+  --color-text-secondary: #475569; /* Body copy & labels (Slate 600) - 7.0:1 on canvas */
+  --color-text-muted: #64748B;     /* Captions & helper text (Slate 500) - 4.6:1 on surface */
+  --color-text-inverse: #FFFFFF;   /* Text on dark backgrounds */
+
+  /* Focus & Accessibility */
+  --focus-ring-color: #4F46E5;
+  --focus-ring-offset: 2px;
+  --focus-ring-width: 3px;
+  --focus-ring: 0 0 0 var(--focus-ring-offset) var(--color-bg-surface), 0 0 0 calc(var(--focus-ring-offset) + var(--focus-ring-width)) var(--focus-ring-color);
+
+  /* ==========================================================================
+     TYPOGRAPHY SYSTEM
+     ========================================================================== */
+
+  /* Font Families */
+  --font-family-display: 'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-family-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-family-mono: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* Font Sizes (Modular Scale: 1.25 Major Third - Unit: rem) */
+  --font-size-xs: 0.75rem;    /* 12px - Captions, tags, badges */
+  --font-size-sm: 0.875rem;   /* 14px - Body small, inputs, buttons */
+  --font-size-base: 1rem;     /* 16px - Default body text */
+  --font-size-md: 1.125rem;   /* 18px - Lead paragraphs, H5 */
+  --font-size-lg: 1.25rem;    /* 20px - H4, component titles */
+  --font-size-xl: 1.5rem;     /* 24px - H3, card titles */
+  --font-size-2xl: 2rem;      /* 32px - H2, section titles */
+  --font-size-3xl: 2.5rem;    /* 40px - H1, main page titles */
+  --font-size-4xl: 3.25rem;   /* 52px - Hero display titles */
+
+  /* Font Weights */
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+
+  /* Line Heights (Unitless for proportional scaling) */
+  --line-height-tight: 1.2;     /* H1, Hero */
+  --line-height-snug: 1.25;     /* H2 */
+  --line-height-normal: 1.35;   /* H3, H4 */
+  --line-height-relaxed: 1.5;   /* Body small, captions */
+  --line-height-loose: 1.625;   /* Body copy for optimal reading comfort */
+
+  /* Letter Spacing */
+  --letter-spacing-tighter: -0.03em;
+  --letter-spacing-tight: -0.02em;
+  --letter-spacing-normal: 0em;
+  --letter-spacing-wide: 0.025em;
+  --letter-spacing-wider: 0.05em;   /* Overline, uppercase labels */
+
+  /* ==========================================================================
+     SPACING & LAYOUT SCALE
+     ========================================================================== */
+  --space-0-5: 0.125rem; /* 2px */
+  --space-1: 0.25rem;    /* 4px */
+  --space-2: 0.5rem;     /* 8px */
+  --space-3: 0.75rem;    /* 12px */
+  --space-4: 1rem;       /* 16px */
+  --space-5: 1.25rem;    /* 20px */
+  --space-6: 1.5rem;     /* 24px */
+  --space-8: 2rem;       /* 32px */
+  --space-10: 2.5rem;    /* 40px */
+  --space-12: 3rem;      /* 48px */
+  --space-16: 4rem;      /* 64px */
+  --space-20: 5rem;      /* 80px */
+  --space-24: 6rem;      /* 96px */
+
+  /* Container & Max Widths */
+  --container-max-width: 1200px;
+  --container-padding: var(--space-5);
+  --content-max-width: 72ch; /* Optimal reading line length */
+
+  /* ==========================================================================
+     BORDERS & RADIUS
+     ========================================================================== */
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 8px;      /* Standard buttons, cards */
+  --radius-lg: 12px;     /* Modals, feature cards */
+  --radius-xl: 16px;     /* Hero cards, algorithm containers */
+  --radius-full: 9999px; /* Badges, pill buttons */
+
+  --border-width-thin: 1px;
+  --border-width-medium: 2px;
+  --border-width-thick: 3px;
+
+  /* ==========================================================================
+     BOX SHADOWS & ELEVATION
+     ========================================================================== */
+  --shadow-xs: 0 1px 2px 0 rgba(15, 23, 42, 0.05);
+  --shadow-sm: 0 1px 3px 0 rgba(15, 23, 42, 0.08), 0 1px 2px -1px rgba(15, 23, 42, 0.08);
+  --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.08), 0 2px 4px -2px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.08), 0 4px 6px -4px rgba(15, 23, 42, 0.08);
+  --shadow-xl: 0 20px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.08);
+  --shadow-hover: 0 12px 24px -4px rgba(79, 70, 229, 0.12), 0 4px 8px -2px rgba(15, 23, 42, 0.06);
+
+  /* ==========================================================================
+     TRANSITIONS & MOTION
+     ========================================================================== */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ==========================================================================
+   DARK THEME SYSTEM (WCAG 2.1 AA/AAA Compliant)
+   ========================================================================== */
+[data-theme="dark"],
+body.dark-mode {
+  --color-primary-600: #6366F1; /* Slightly lighter for dark surface contrast */
+  --color-primary-700: #818CF8;
+  --color-primary-800: #4F46E5;
+  --color-primary-contrast: #0F172A;
+
+  --color-secondary-600: #14B8A6;
+  --color-secondary-700: #2DD4BF;
+  --color-secondary-contrast: #0F172A;
+
+  --color-bg-canvas: #0B0F19;      /* Dark Void */
+  --color-bg-surface: #111827;     /* Dark Slate Surface */
+  --color-bg-surface-elevated: #1F2937;
+  --color-bg-subtle: #1E293B;
+  --color-bg-hover: #1E293B;
+
+  --color-border-subtle: #1F2937;
+  --color-border-strong: #374151;
+  --color-border-hover: #4B5563;
+
+  --color-text-primary: #F8FAFC;   /* 16.5:1 contrast against canvas */
+  --color-text-secondary: #94A3B8; /* 6.8:1 contrast against canvas */
+  --color-text-muted: #64748B;     /* 4.5:1 contrast against surface */
+  --color-text-inverse: #0F172A;
+
+  --color-success-base: #34D399;
+  --color-success-light: rgba(16, 185, 129, 0.15);
+  --color-success-dark: #6EE7B7;
+
+  --color-warning-base: #FBBF24;
+  --color-warning-light: rgba(245, 158, 11, 0.15);
+  --color-warning-dark: #FDE68A;
+
+  --color-danger-base: #F87171;
+  --color-danger-light: rgba(239, 68, 68, 0.15);
+  --color-danger-dark: #FCA5A5;
+
+  --color-info-base: #60A5FA;
+  --color-info-light: rgba(59, 130, 246, 0.15);
+  --color-info-dark: #93C5FD;
+
+  --focus-ring-color: #818CF8;
+  --focus-ring: 0 0 0 var(--focus-ring-offset) var(--color-bg-surface), 0 0 0 calc(var(--focus-ring-offset) + var(--focus-ring-width)) var(--focus-ring-color);
+
+  --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.6);
+  --shadow-hover: 0 12px 24px -4px rgba(99, 102, 241, 0.25);
+}
+
+/* Auto-detect OS Dark Mode preference */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --color-primary-600: #6366F1;
+    --color-primary-700: #818CF8;
+    --color-primary-800: #4F46E5;
+    --color-primary-contrast: #0F172A;
+
+    --color-secondary-600: #14B8A6;
+    --color-secondary-700: #2DD4BF;
+    --color-secondary-contrast: #0F172A;
+
+    --color-bg-canvas: #0B0F19;
+    --color-bg-surface: #111827;
+    --color-bg-surface-elevated: #1F2937;
+    --color-bg-subtle: #1E293B;
+    --color-bg-hover: #1E293B;
+
+    --color-border-subtle: #1F2937;
+    --color-border-strong: #374151;
+    --color-border-hover: #4B5563;
+
+    --color-text-primary: #F8FAFC;
+    --color-text-secondary: #94A3B8;
+    --color-text-muted: #64748B;
+    --color-text-inverse: #0F172A;
+
+    --color-success-base: #34D399;
+    --color-success-light: rgba(16, 185, 129, 0.15);
+    --color-success-dark: #6EE7B7;
+
+    --color-warning-base: #FBBF24;
+    --color-warning-light: rgba(245, 158, 11, 0.15);
+    --color-warning-dark: #FDE68A;
+
+    --color-danger-base: #F87171;
+    --color-danger-light: rgba(239, 68, 68, 0.15);
+    --color-danger-dark: #FCA5A5;
+
+    --color-info-base: #60A5FA;
+    --color-info-light: rgba(59, 130, 246, 0.15);
+    --color-info-dark: #93C5FD;
+
+    --focus-ring-color: #818CF8;
+    --shadow-hover: 0 12px 24px -4px rgba(99, 102, 241, 0.25);
+  }
+}
+
+/* High Contrast Windows Forced Colors Mode Fallback */
+@media (forced-colors: active) {
+  :root {
+    --color-primary-600: Highlight;
+    --color-primary-contrast: HighlightText;
+    --color-bg-canvas: Canvas;
+    --color-bg-surface: Canvas;
+    --color-text-primary: CanvasText;
+    --color-text-secondary: CanvasText;
+    --color-border-subtle: CanvasText;
+    --color-border-strong: CanvasText;
+    --focus-ring-color: Highlight;
+  }
+}

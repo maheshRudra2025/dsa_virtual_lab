@@ -19,6 +19,9 @@ export default function Header() {
               <li>
                 <Link href="/feedback">Feedback</Link>
               </li>
+              <li>
+                <Link href="/styleguide">Style Guide</Link>
+              </li>
             </ul>
           </nav>
         </div>

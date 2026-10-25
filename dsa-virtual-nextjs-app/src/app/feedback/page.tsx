@@ -39,31 +39,43 @@ export default function Feedback() {
         <h1>Feedback</h1>
         <p>We would love to hear your thoughts, suggestions, or issues.</p>
         <form onSubmit={handleSubmit}>
-          <input
-            type="text"
-            name="name"
-            placeholder="Your Name"
-            value={formData.name}
-            onChange={handleInputChange}
-            required
-          />
-          <input
-            type="email"
-            name="email"
-            placeholder="Your Email"
-            value={formData.email}
-            onChange={handleInputChange}
-            required
-          />
-          <textarea
-            name="message"
-            placeholder="Your Message"
-            rows={6}
-            value={formData.message}
-            onChange={handleInputChange}
-            required
-          />
-          <button type="submit" className="btn">
+          <div className="form-group">
+            <label htmlFor="name">Your Name</label>
+            <input
+              id="name"
+              type="text"
+              name="name"
+              placeholder="e.g. Jane Doe"
+              value={formData.name}
+              onChange={handleInputChange}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="email">Your Email</label>
+            <input
+              id="email"
+              type="email"
+              name="email"
+              placeholder="e.g. jane@example.com"
+              value={formData.email}
+              onChange={handleInputChange}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="message">Your Message</label>
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Share your thoughts, suggestions, or bug reports..."
+              rows={6}
+              value={formData.message}
+              onChange={handleInputChange}
+              required
+            />
+          </div>
+          <button type="submit" className="btn btn-primary">
             Submit Feedback
           </button>
         </form>
