@@ -1,0 +1,29 @@
+{
+  "name": "dsa-virtual-lab",
+  "version": "1.0.0",
+  "description": "Interactive Data Structures and Algorithms Virtual Lab",
+  "private": true,
+  "scripts": {
+    "dev": "npm --prefix dsa-virtual-nextjs-app run dev",
+    "build": "npm --prefix dsa-virtual-nextjs-app run build",
+    "start": "npm --prefix dsa-virtual-nextjs-app run start",
+    "lint": "npm --prefix dsa-virtual-nextjs-app run lint",
+    "install:app": "npm --prefix dsa-virtual-nextjs-app install"
+  },
+  "keywords": [
+    "dsa",
+    "algorithms",
+    "data-structures",
+    "visualization",
+    "virtual-lab",
+    "nextjs",
+    "react",
+    "typescript"
+  ],
+  "author": "DSA Virtual Lab Contributors",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/maheshRudra2025/dsa_virtual_lab.git"
+  }
+}
