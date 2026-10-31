@@ -1,200 +1,170 @@
-# DSA Virtual Lab - Project Structure
+# DSA Virtual Lab - Project Architecture & Standardized Directory Structure
 
-## 📁 Project Overview
+## 📌 Project Overview
 
-The DSA Virtual Lab is an interactive web application for learning Data Structures and Algorithms through visualizations, code examples, and theoretical explanations.
+The **DSA Virtual Lab** is an interactive educational platform designed to help students, educators, and software engineers understand Data Structures and Algorithms through visual animations, step-through executions, and conceptual theory.
 
-## 🏗️ Directory Structure
-
-```
-dsa_virtual_lab_OS/
-├── index.html                     # Entry point - redirects to main app
-├── README.md                      # Project documentation
-├── PROJECT_STRUCTURE.md           # This file - explains project organization
-├── CODE_OF_CONDUCT.md            # Community guidelines
-├── CONTRIBUTE.md                 # Contribution guidelines
-├── STYLE_GUIDE.md                # Design system, color palette, typography & accessibility guide
-│
-└── src/                          # Main source directory
-    ├── pages/                    # Application pages
-    │   ├── index.html           # Main landing page
-    │   ├── experiments.html     # List of all experiments
-    │   └── feedback.html        # User feedback form
-    │
-    ├── experiments/             # Organized experiment modules
-    │   ├── trees/              # Tree data structures
-    │   │   ├── avl/            # AVL Tree
-    │   │   │   ├── theory.html      # Theoretical explanation
-    │   │   │   ├── code.html        # Implementation code
-    │   │   │   ├── visualization.html # Interactive visualization
-    │   │   │   └── images/          # AVL-specific images
-    │   │   ├── bst/            # Binary Search Tree
-    │   │   │   ├── theory.html
-    │   │   │   ├── code.html
-    │   │   │   ├── visualization.html
-    │   │   │   └── images/
-    │   │   └── btree/          # B-Tree
-    │   │       ├── theory.html
-    │   │       ├── code.html
-    │   │       ├── visualization.html
-    │   │       └── images/
-    │   │
-    │   ├── graphs/             # Graph algorithms
-    │   │   ├── bfs/            # Breadth-First Search
-    │   │   │   ├── theory.html
-    │   │   │   ├── code.html
-    │   │   │   ├── visualization.html
-    │   │   │   └── images/
-    │   │   └── dfs/            # Depth-First Search
-    │   │       ├── theory.html
-    │   │       ├── code.html
-    │   │       ├── visualization.html
-    │   │       └── images/
-    │   │
-    │   └── linear-structures/  # Linear data structures
-    │       ├── stack/          # Stack implementation
-    │       │   ├── theory.html
-    │       │   ├── code.html
-    │       │   ├── visualization.html
-    │       │   └── stack-image.png
-    │       └── queue/          # Queue implementation
-    │           ├── theory.html
-    │           ├── code.html
-    │           ├── visualization.html
-    │           └── queue-image.png
-    │
-    ├── assets/                 # Static assets and resources
-    │   ├── css/               # Stylesheets
-    │   │   ├── main.css           # Main application styles
-    │   │   ├── visualization.css   # Visualization page styles
-    │   │   └── prism.css          # Code syntax highlighting
-    │   ├── js/                # JavaScript files
-    │   │   └── prism.js           # Syntax highlighting library
-    │   ├── images/            # Images and logos
-    │   │   ├── DsaVirtualLabFinalLogo.png
-    │   │   ├── collegelogo.png
-    │   │   └── ...                # Other shared images
-    │   └── static/            # Build artifacts and compiled assets
-    │       ├── css/
-    │       └── js/
-    │
-    └── lib/                   # Libraries and utilities
-        ├── algorithms/        # Algorithm implementations
-        │   ├── Algorithm.js       # Base algorithm class
-        │   ├── AVL.js            # AVL Tree algorithms
-        │   ├── BST.js            # Binary Search Tree algorithms
-        │   ├── BTree.js          # B-Tree algorithms
-        │   ├── BFS.js            # Breadth-First Search
-        │   ├── DFS.js            # Depth-First Search
-        │   ├── Graph.js          # Graph utilities
-        │   ├── StackLL.js        # Stack with Linked List
-        │   └── QueueLL.js        # Queue with Linked List
-        │
-        ├── animations/        # Animation utilities
-        │   ├── AnimationMain.js   # Main animation controller
-        │   ├── AnimatedObject.js  # Base animated object
-        │   ├── AnimatedCircle.js  # Animated circle elements
-        │   ├── AnimatedLabel.js   # Animated text labels
-        │   ├── AnimatedRectangle.js # Animated rectangles
-        │   ├── AnimatedLinkedList.js # Animated linked list
-        │   ├── AnimatedBTreeNode.js # Animated B-Tree nodes
-        │   ├── HighlightCircle.js # Highlighting effects
-        │   ├── Line.js           # Line drawing utilities
-        │   ├── ObjectManager.js  # Animation object management
-        │   ├── CustomEvents.js   # Custom event handling
-        │   └── UndoFunctions.js  # Undo/Redo functionality
-        │
-        └── third-party/       # External libraries
-            ├── jquery-1.5.2.min.js
-            ├── jquery-ui-1.8.11.custom.min.js
-            └── jquery-ui-1.8.11.custom.css
-```
-
-## 🎯 Key Features
-
-### **Interactive Experiments**
-Each experiment includes three components:
-- **Theory** - Comprehensive explanation of concepts
-- **Code** - Implementation with syntax highlighting  
-- **Visualization** - Interactive animations and demonstrations
-
-### **Organized by Category**
-- **Trees** - AVL Trees, Binary Search Trees, B-Trees
-- **Graphs** - BFS, DFS algorithms
-- **Linear Structures** - Stacks, Queues
-
-### **Modern Architecture**
-- Clean separation of concerns
-- Modular component structure
-- Reusable animation and algorithm libraries
-- Responsive design patterns
-
-## 🚀 Getting Started
-
-### **Quick Start**
-1. Open `index.html` in your browser
-2. Navigate through the experiments
-3. Explore theory, code, and visualizations
-
-### **Development**
-1. Main pages are in `src/pages/`
-2. Experiment modules in `src/experiments/`
-3. Shared assets in `src/assets/` 
-4. Reusable libraries in `src/lib/`
-
-## 🛠️ Technology Stack
-
-- **Frontend**: HTML5, CSS3, JavaScript (ES5/ES6)
-- **Animations**: Custom animation library built on Canvas API
-- **UI Framework**: jQuery + jQuery UI
-- **Styling**: Custom CSS with responsive design
-- **Code Highlighting**: Prism.js
-
-## 📱 Features
-
-- **Responsive Design** - Works on desktop and mobile
-- **Interactive Visualizations** - Step-through algorithm execution
-- **Code Examples** - Syntax-highlighted implementations
-- **Educational Content** - Comprehensive theory explanations
-- **User Feedback** - Built-in feedback system
-
-## 🔧 Architecture Benefits
-
-### **Maintainability**
-- Clear file organization
-- Consistent naming conventions
-- Modular structure
-
-### **Scalability** 
-- Easy to add new experiments
-- Reusable component libraries
-- Standardized experiment format
-
-### **Developer Experience**
-- Intuitive folder structure
-- Well-organized assets
-- Clear separation of concerns
-
-## 📝 Adding New Experiments
-
-To add a new experiment:
-
-1. Create folder in appropriate category under `src/experiments/`
-2. Add three files: `theory.html`, `code.html`, `visualization.html`
-3. Include experiment-specific images in `images/` subfolder
-4. Update experiment links in `src/pages/experiments.html`
-5. Follow existing patterns for consistency
-
-## 🎨 Styling Guidelines
-
-- Main styles: `src/assets/css/main.css`
-- Visualization styles: `src/assets/css/visualization.css`
-- Use consistent color scheme and typography
-- Maintain responsive design patterns
+This document outlines the standardized repository architecture, directory layout, design conventions, and guidelines for adding new data structures and algorithms.
 
 ---
 
-**Project Type**: Educational Web Application  
-**Architecture**: Modular Frontend Application  
-**Last Updated**: September 2025  
-**Status**: ✅ Production Ready
+## 🏗️ Repository Architecture
+
+The project has transitioned into a modern Next.js 15 application while preserving standalone static references and legacy archives for continuous backward compatibility.
+
+```
+dsa_virtual_lab/
+├── .gitignore                      # Standardized repository-wide ignore rules
+├── package.json                    # Root task orchestrator (npm run dev/build/lint)
+├── index.html                      # Entry gateway and environment router
+├── README.md                       # Main project introduction & quickstart
+├── PROJECT_STRUCTURE.md            # Comprehensive architecture documentation (this file)
+├── STYLE_GUIDE.md                  # Design system, accessible color palette & typography
+├── CONTRIBUTE.md                   # Contribution workflow & PR guidelines
+├── CODE_OF_CONDUCT.md              # Community standards
+├── LICENSE.md                      # MIT open-source license
+│
+├── dsa-virtual-nextjs-app/         # Modern Next.js 15 + TypeScript Web Application (Active)
+│   ├── public/                     # Static assets & client runtime scripts
+│   │   ├── lib/                    # Canvas animation & algorithm engine
+│   │   │   ├── algorithms/         # Concrete algorithm classes (StackLL, QueueLL, AVL, etc.)
+│   │   │   ├── animations/         # Canvas object managers and drawing engines
+│   │   │   └── third-party/        # Runtime UI helpers (jQuery UI CSS/JS)
+│   │   ├── file.svg, globe.svg...  # Brand icons & logos
+│   │   └── DsaVirtualLabFinalLogo.png
+│   │
+│   ├── src/                        # Next.js Source Code
+│   │   ├── app/                    # Next.js App Router (Routes & Pages)
+│   │   │   ├── layout.tsx          # Root layout (Header, Footer, Theme tokens)
+│   │   │   ├── page.tsx            # Home landing page
+│   │   │   ├── globals.css         # Global stylesheet & Tailwind directives
+│   │   │   ├── theme.css           # Design tokens (colors, elevation, typography)
+│   │   │   ├── feedback/           # User feedback submission page
+│   │   │   ├── styleguide/         # Design system & WCAG accessibility showcase
+│   │   │   └── experiments/        # Interactive experiment routes
+│   │   │       ├── page.tsx        # Experiments catalogue & directory
+│   │   │       ├── stack/page.tsx  # LIFO Stack visualizer (Modular component)
+│   │   │       ├── queue/page.tsx  # FIFO Queue visualizer (Modular component)
+│   │   │       ├── avl/page.tsx    # AVL Tree experiment
+│   │   │       ├── bst/page.tsx    # Binary Search Tree experiment
+│   │   │       ├── btree/page.tsx  # B-Tree experiment
+│   │   │       ├── bfs/page.tsx    # Breadth-First Search experiment
+│   │   │       └── dfs/page.tsx    # Depth-First Search experiment
+│   │   │
+│   │   ├── components/             # Reusable UI Components
+│   │   │   ├── Header.tsx          # Global navigation header
+│   │   │   ├── Footer.tsx          # Global footer
+│   │   │   └── AlgorithmVisualizer.tsx # Reusable Canvas Visualizer container
+│   │   │
+│   │   ├── hooks/                  # Custom React Hooks
+│   │   │   └── useAlgorithmVisualizer.ts # Dynamic script loader & canvas lifecycle hook
+│   │   │
+│   │   └── types/                  # TypeScript Interfaces & Definitions
+│   │       └── visualizer.ts       # Visualizer configuration & Window globals
+│   │
+│   ├── eslint.config.mjs           # Flat ESLint configuration with public ignores
+│   ├── next.config.ts              # Next.js & Turbopack workspace configuration
+│   ├── tsconfig.json               # TypeScript compiler options
+│   └── package.json                # App dependencies & scripts
+│
+├── new_ui/                         # Standalone Static HTML/CSS Prototype (Redesign)
+│   ├── css/                        # Shared styles (main.css, theme.css)
+│   ├── index.html                  # Static landing page
+│   ├── experiments.html            # Static experiments catalogue
+│   ├── feedback.html               # Static feedback page
+│   └── styleguide.html             # Static design system reference
+│
+└── old/                            # Legacy Static Codebase (Archive)
+    └── src/                        # Original pre-migration HTML, CSS, JS implementation
+        ├── experiments/            # Static tree, graph, linear structure pages
+        ├── lib/                    # Original animation engine scripts
+        └── pages/                  # Original entry templates
+```
+
+---
+
+## 🧩 Architectural Highlights
+
+### 1. Unified Visualizer Architecture (`useAlgorithmVisualizer` & `<AlgorithmVisualizer />`)
+
+Previously, each visualization route duplicated hundreds of lines of imperative DOM script injection, un-typed `(window as any)` calls, and manual lifecycle handling.
+
+The standardized architecture extracts this into two reusable layers:
+
+1. **`useAlgorithmVisualizer(config)`**:
+   - Manages asynchronous, sequential loading of core animation dependencies (`AnimationMain.js`, `ObjectManager.js`, `Algorithm.js`) and the target algorithm file.
+   - Binds the `<canvas>` DOM reference to the global canvas context.
+   - Wires animation event listeners (`AnimationStarted`, `AnimationEnded`, `AnimationWaiting`, `AnimationUndoUnavailable`).
+   - Safely cleans up animation timers, global references, and event listeners on unmount.
+
+2. **`<AlgorithmVisualizer config={...} />`**:
+   - Standardized layout container featuring:
+     - Header with title, description, and "All Experiments" navigation link.
+     - `#algoControlSection` (`#AlgorithmSpecificControls` table populated by the algorithm).
+     - Responsive canvas container with a loading spinner while engine assets load.
+     - `#generalAnimationControlSection` (`#GeneralAnimationControls` table for Play/Pause/Undo/Speed).
+     - Consistent styling aligned with the project's design system tokens.
+
+### 2. Root Task Orchestration
+
+Developers can now work from the root of the repository without having to change directories manually:
+
+| Command | Action |
+|---|---|
+| `npm run dev` | Starts the Next.js development server at `http://localhost:3000` |
+| `npm run build` | Produces an optimized production build of the Next.js app |
+| `npm run start` | Launches the built production server |
+| `npm run lint` | Runs ESLint type-checking and lint validation across the codebase |
+| `npm run install:app` | Installs dependencies for the Next.js application |
+
+---
+
+## 🚀 How to Add a New Algorithm Visualization
+
+To add a new visualization (e.g., Binary Search Tree):
+
+1. **Ensure Algorithm Script is Available**:
+   Verify that the algorithm's client class exists in `dsa-virtual-nextjs-app/public/lib/algorithms/` (e.g., `BST.js`).
+
+2. **Create the Route**:
+   Add or update `dsa-virtual-nextjs-app/src/app/experiments/[name]/page.tsx`:
+
+   ```tsx
+   "use client";
+
+   import AlgorithmVisualizer from "@/components/AlgorithmVisualizer";
+   import type { VisualizerConfig } from "@/types/visualizer";
+
+   const bstConfig: VisualizerConfig = {
+     title: "Binary Search Tree",
+     category: "Trees",
+     description: "Interactive Binary Search Tree insertions, searches, and balancing.",
+     algorithmScript: "/lib/algorithms/BST.js",
+     algorithmClass: "BST",
+     canvasWidth: 800,
+     canvasHeight: 450,
+   };
+
+   export default function BSTExperiment() {
+     return <AlgorithmVisualizer config={bstConfig} />;
+   }
+   ```
+
+3. **Verify the Build**:
+   ```bash
+   npm run build
+   ```
+
+---
+
+## 🎨 Design System & Accessibility
+
+All UI components adhere to the design system in `dsa-virtual-nextjs-app/src/app/theme.css` and `STYLE_GUIDE.md`:
+- **WCAG 2.1 AA/AAA compliance**: Colors achieve minimum 4.5:1 (normal text) and 3:1 (large text) contrast ratios.
+- **Consistent Tokens**: Semantic variables for `--color-primary-*`, `--color-secondary-*`, `--color-surface`, and `--color-text`.
+- **Keyboard Navigation**: All interactive visualizer buttons and inputs support tab indexing and focus indicators.
+
+---
+
+**Last Updated**: October 2026  
+**Status**: Standardized & Production Ready
