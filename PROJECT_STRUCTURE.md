@@ -1,200 +1,139 @@
 # DSA Virtual Lab - Project Structure
 
-## 📁 Project Overview
+## 📁 Repository Overview
 
-The DSA Virtual Lab is an interactive web application for learning Data Structures and Algorithms through visualizations, code examples, and theoretical explanations.
-
-## 🏗️ Directory Structure
+The repository consists of the active Next.js application alongside preserved historical iterations:
 
 ```
-dsa_virtual_lab_OS/
-├── index.html                     # Entry point - redirects to main app
-├── README.md                      # Project documentation
-├── PROJECT_STRUCTURE.md           # This file - explains project organization
-├── CODE_OF_CONDUCT.md            # Community guidelines
-├── CONTRIBUTE.md                 # Contribution guidelines
-├── STYLE_GUIDE.md                # Design system, color palette, typography & accessibility guide
-│
-└── src/                          # Main source directory
-    ├── pages/                    # Application pages
-    │   ├── index.html           # Main landing page
-    │   ├── experiments.html     # List of all experiments
-    │   └── feedback.html        # User feedback form
-    │
-    ├── experiments/             # Organized experiment modules
-    │   ├── trees/              # Tree data structures
-    │   │   ├── avl/            # AVL Tree
-    │   │   │   ├── theory.html      # Theoretical explanation
-    │   │   │   ├── code.html        # Implementation code
-    │   │   │   ├── visualization.html # Interactive visualization
-    │   │   │   └── images/          # AVL-specific images
-    │   │   ├── bst/            # Binary Search Tree
-    │   │   │   ├── theory.html
-    │   │   │   ├── code.html
-    │   │   │   ├── visualization.html
-    │   │   │   └── images/
-    │   │   └── btree/          # B-Tree
-    │   │       ├── theory.html
-    │   │       ├── code.html
-    │   │       ├── visualization.html
-    │   │       └── images/
-    │   │
-    │   ├── graphs/             # Graph algorithms
-    │   │   ├── bfs/            # Breadth-First Search
-    │   │   │   ├── theory.html
-    │   │   │   ├── code.html
-    │   │   │   ├── visualization.html
-    │   │   │   └── images/
-    │   │   └── dfs/            # Depth-First Search
-    │   │       ├── theory.html
-    │   │       ├── code.html
-    │   │       ├── visualization.html
-    │   │       └── images/
-    │   │
-    │   └── linear-structures/  # Linear data structures
-    │       ├── stack/          # Stack implementation
-    │       │   ├── theory.html
-    │       │   ├── code.html
-    │       │   ├── visualization.html
-    │       │   └── stack-image.png
-    │       └── queue/          # Queue implementation
-    │           ├── theory.html
-    │           ├── code.html
-    │           ├── visualization.html
-    │           └── queue-image.png
-    │
-    ├── assets/                 # Static assets and resources
-    │   ├── css/               # Stylesheets
-    │   │   ├── main.css           # Main application styles
-    │   │   ├── visualization.css   # Visualization page styles
-    │   │   └── prism.css          # Code syntax highlighting
-    │   ├── js/                # JavaScript files
-    │   │   └── prism.js           # Syntax highlighting library
-    │   ├── images/            # Images and logos
-    │   │   ├── DsaVirtualLabFinalLogo.png
-    │   │   ├── collegelogo.png
-    │   │   └── ...                # Other shared images
-    │   └── static/            # Build artifacts and compiled assets
-    │       ├── css/
-    │       └── js/
-    │
-    └── lib/                   # Libraries and utilities
-        ├── algorithms/        # Algorithm implementations
-        │   ├── Algorithm.js       # Base algorithm class
-        │   ├── AVL.js            # AVL Tree algorithms
-        │   ├── BST.js            # Binary Search Tree algorithms
-        │   ├── BTree.js          # B-Tree algorithms
-        │   ├── BFS.js            # Breadth-First Search
-        │   ├── DFS.js            # Depth-First Search
-        │   ├── Graph.js          # Graph utilities
-        │   ├── StackLL.js        # Stack with Linked List
-        │   └── QueueLL.js        # Queue with Linked List
-        │
-        ├── animations/        # Animation utilities
-        │   ├── AnimationMain.js   # Main animation controller
-        │   ├── AnimatedObject.js  # Base animated object
-        │   ├── AnimatedCircle.js  # Animated circle elements
-        │   ├── AnimatedLabel.js   # Animated text labels
-        │   ├── AnimatedRectangle.js # Animated rectangles
-        │   ├── AnimatedLinkedList.js # Animated linked list
-        │   ├── AnimatedBTreeNode.js # Animated B-Tree nodes
-        │   ├── HighlightCircle.js # Highlighting effects
-        │   ├── Line.js           # Line drawing utilities
-        │   ├── ObjectManager.js  # Animation object management
-        │   ├── CustomEvents.js   # Custom event handling
-        │   └── UndoFunctions.js  # Undo/Redo functionality
-        │
-        └── third-party/       # External libraries
-            ├── jquery-1.5.2.min.js
-            ├── jquery-ui-1.8.11.custom.min.js
-            └── jquery-ui-1.8.11.custom.css
+dsa_virtual_lab/
+├── dsa-virtual-nextjs-app/        # 🚀 ACTIVE: Modern Next.js 15 + React 19 + TypeScript application
+├── new_ui/                        # 🎨 Static HTML/CSS UI prototype
+├── old/                           # 🗄️ Legacy vanilla HTML/CSS/JS application (preserved for reference)
+├── CODE_OF_CONDUCT.md             # Community standards
+├── CONTRIBUTE.md                  # Contribution and PR guidelines
+├── LICENSE.md                     # MIT License
+├── PROJECT_STRUCTURE.md           # This architecture guide
+├── README.md                      # Project setup & documentation
+├── STYLE_GUIDE.md                 # Design system & accessibility guidelines
+└── SYNC_FORK_GUIDE.md             # Fork synchronization guide
 ```
-
-## 🎯 Key Features
-
-### **Interactive Experiments**
-Each experiment includes three components:
-- **Theory** - Comprehensive explanation of concepts
-- **Code** - Implementation with syntax highlighting  
-- **Visualization** - Interactive animations and demonstrations
-
-### **Organized by Category**
-- **Trees** - AVL Trees, Binary Search Trees, B-Trees
-- **Graphs** - BFS, DFS algorithms
-- **Linear Structures** - Stacks, Queues
-
-### **Modern Architecture**
-- Clean separation of concerns
-- Modular component structure
-- Reusable animation and algorithm libraries
-- Responsive design patterns
-
-## 🚀 Getting Started
-
-### **Quick Start**
-1. Open `index.html` in your browser
-2. Navigate through the experiments
-3. Explore theory, code, and visualizations
-
-### **Development**
-1. Main pages are in `src/pages/`
-2. Experiment modules in `src/experiments/`
-3. Shared assets in `src/assets/` 
-4. Reusable libraries in `src/lib/`
-
-## 🛠️ Technology Stack
-
-- **Frontend**: HTML5, CSS3, JavaScript (ES5/ES6)
-- **Animations**: Custom animation library built on Canvas API
-- **UI Framework**: jQuery + jQuery UI
-- **Styling**: Custom CSS with responsive design
-- **Code Highlighting**: Prism.js
-
-## 📱 Features
-
-- **Responsive Design** - Works on desktop and mobile
-- **Interactive Visualizations** - Step-through algorithm execution
-- **Code Examples** - Syntax-highlighted implementations
-- **Educational Content** - Comprehensive theory explanations
-- **User Feedback** - Built-in feedback system
-
-## 🔧 Architecture Benefits
-
-### **Maintainability**
-- Clear file organization
-- Consistent naming conventions
-- Modular structure
-
-### **Scalability** 
-- Easy to add new experiments
-- Reusable component libraries
-- Standardized experiment format
-
-### **Developer Experience**
-- Intuitive folder structure
-- Well-organized assets
-- Clear separation of concerns
-
-## 📝 Adding New Experiments
-
-To add a new experiment:
-
-1. Create folder in appropriate category under `src/experiments/`
-2. Add three files: `theory.html`, `code.html`, `visualization.html`
-3. Include experiment-specific images in `images/` subfolder
-4. Update experiment links in `src/pages/experiments.html`
-5. Follow existing patterns for consistency
-
-## 🎨 Styling Guidelines
-
-- Main styles: `src/assets/css/main.css`
-- Visualization styles: `src/assets/css/visualization.css`
-- Use consistent color scheme and typography
-- Maintain responsive design patterns
 
 ---
 
-**Project Type**: Educational Web Application  
-**Architecture**: Modular Frontend Application  
-**Last Updated**: September 2025  
-**Status**: ✅ Production Ready
+## 🚀 Active Application: `dsa-virtual-nextjs-app/`
+
+The primary development focus is inside `dsa-virtual-nextjs-app/`. It uses the Next.js App Router with TypeScript.
+
+### Directory Structure
+
+```
+dsa-virtual-nextjs-app/
+├── public/                               # Static public assets
+│   ├── lib/                              # HTML5 Canvas Visualization Engine
+│   │   ├── algorithms/                   # Algorithm execution classes
+│   │   │   ├── Algorithm.js              # Base algorithm handler
+│   │   │   ├── AVL.js                    # AVL Tree balancing & rotations
+│   │   │   ├── BFS.js                    # Breadth-First Search
+│   │   │   ├── BST.js                    # Binary Search Tree
+│   │   │   ├── BTree.js                  # B-Tree
+│   │   │   ├── DFS.js                    # Depth-First Search
+│   │   │   ├── Graph.js                  # Graph adjacency & drawing utilities
+│   │   │   ├── QueueLL.js                # Queue (Linked List backed)
+│   │   │   └── StackLL.js                # Stack (Linked List backed)
+│   │   ├── animations/                   # Custom 2D Canvas animation engine
+│   │   │   ├── AnimatedBTreeNode.js      # B-Tree node animations
+│   │   │   ├── AnimatedCircle.js         # Circle node representations
+│   │   │   ├── AnimatedLabel.js          # Text / pointer labels
+│   │   │   ├── AnimatedLinkedList.js     # Linked list visual representations
+│   │   │   ├── AnimatedObject.js         # Base animated entity
+│   │   │   ├── AnimatedRectangle.js      # Array/slot visual representations
+│   │   │   ├── AnimationMain.js          # Animation timeline & loop manager
+│   │   │   ├── CustomEvents.js           # Event dispatching for step execution
+│   │   │   ├── HighlightCircle.js        # Node focus & traversal indicators
+│   │   │   ├── Line.js                   # Edges and pointer lines
+│   │   │   ├── ObjectManager.js          # Object lifecycle manager
+│   │   │   └── UndoFunctions.js          # Timeline scrubbing & step-back support
+│   │   └── third-party/                  # Supporting vendor libraries for visualization
+│   │       ├── jquery-1.5.2.min.js       # Required by legacy canvas animation engine
+│   │       ├── jquery-ui-1.8.11.custom.css
+│   │       └── jquery-ui-1.8.11.custom.min.js
+│   ├── file.svg
+│   ├── globe.svg
+│   ├── next.svg
+│   ├── vercel.svg
+│   └── window.svg
+│
+├── src/                                  # Application source code
+│   ├── app/                              # Next.js App Router routes & layouts
+│   │   ├── experiments/                  # Experiment visualizer pages
+│   │   │   ├── avl/page.tsx              # AVL Tree experiment
+│   │   │   ├── bfs/page.tsx              # Breadth-First Search experiment
+│   │   │   ├── bst/page.tsx              # Binary Search Tree experiment
+│   │   │   ├── btree/page.tsx            # B-Tree experiment
+│   │   │   ├── dfs/page.tsx              # Depth-First Search experiment
+│   │   │   ├── queue/page.tsx            # Queue experiment
+│   │   │   ├── stack/page.tsx            # Stack experiment
+│   │   │   └── page.tsx                  # Experiments directory & catalog
+│   │   ├── feedback/                     # Feedback submission page
+│   │   │   └── page.tsx
+│   │   ├── styleguide/                   # Interactive style guide & design system
+│   │   │   └── page.tsx
+│   │   ├── favicon.ico
+│   │   ├── globals.css                   # Global styles & layout rules
+│   │   ├── layout.tsx                    # Root HTML layout with Header & Footer
+│   │   ├── page.tsx                      # Landing page / Hero section
+│   │   └── theme.css                     # Design tokens (colors, typography, radii, WCAG)
+│   │
+│   └── components/                       # Shared React components
+│       ├── Header.tsx                    # Site navigation header
+│       └── Footer.tsx                    # Site footer
+│
+├── .gitignore                            # Git exclusion rules
+├── eslint.config.mjs                     # ESLint 9 configuration with Next.js flat configs
+├── next.config.ts                        # Next.js application configuration
+├── package.json                          # App scripts & dependencies
+├── package-lock.json                     # Dependency lock file
+└── tsconfig.json                         # TypeScript configuration (ES2020 target, strict)
+```
+
+---
+
+## 🎨 Transitional Prototype: `new_ui/`
+
+`new_ui/` contains a static HTML/CSS design mockup created during the redesign phase:
+- `index.html` - Home page mockup
+- `experiments.html` - Experiment listing mockup
+- `feedback.html` - Feedback form mockup
+- `styleguide.html` - Static design system showcase
+- `css/main.css` & `css/theme.css` - Prototype stylesheets
+
+*Note: This folder is kept as a design reference and is not part of the active production build.*
+
+---
+
+## 🗄️ Legacy Application: `old/`
+
+`old/` preserves the original multi-page static HTML/CSS/JavaScript implementation:
+- `src/pages/` - Original HTML entry points (`index.html`, `experiments.html`, `feedback.html`)
+- `src/experiments/` - Individual HTML pages for theory, code, and visualization across structures
+- `src/assets/` - Legacy CSS, images, and Prism.js syntax highlighting
+- `src/lib/` - Original JavaScript animation library codebase
+
+*Note: Preserved for historical context, algorithm verification, and backwards compatibility.*
+
+---
+
+## 🛠️ Adding a New Experiment to Next.js
+
+To introduce a new interactive experiment into the active application:
+
+1. **Add Route Directory**: Create a new route folder under `dsa-virtual-nextjs-app/src/app/experiments/<name>/`.
+2. **Create Page Component**: Add `page.tsx` within that directory, following the client-side Canvas bridge pattern used in `stack/page.tsx` or embedding a dedicated React visualizer component.
+3. **Add Algorithm Logic**: If leveraging the Canvas animation engine, add or update the algorithm script under `dsa-virtual-nextjs-app/public/lib/algorithms/`.
+4. **Register in Catalog**: Add the experiment metadata to `dsa-virtual-nextjs-app/src/app/experiments/page.tsx` so it appears in the experiments list.
+5. **Verify Quality**:
+   ```bash
+   npm run typecheck
+   npm run lint
+   npm run build
+   ```
